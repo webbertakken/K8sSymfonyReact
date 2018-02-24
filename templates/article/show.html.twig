@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ title }}
+{% endblock %}
+
+{% block content %}
+	<h1>{{ title }}</h1>
+
+	<p>
+		Spicy jalapeno bacon ipsum dolor amet pancetta fatback biltong pork belly sausage jerky cow boudin doner meatloaf. Pig ham hock strip steak shoulder beef turducken. Turducken shoulder pork chop pancetta strip steak jowl leberkas, turkey corned beef filet mignon venison capicola prosciutto. Brisket turducken tri-tip tail pork chop boudin rump salami pancetta turkey doner bresaola cupim.
+	</p>
+
+	<p>
+		Pork chop beef beef ribs, filet mignon chuck short loin pancetta pork loin ball tip tenderloin salami jerky buffalo prosciutto flank. Strip steak meatball shoulder, kevin pancetta picanha short loin flank pork capicola. Pig ground round filet mignon brisket turkey. Strip steak shankle ribeye filet mignon meatloaf pork loin. Sausage pig prosciutto pork loin venison short ribs meatball pork belly ribeye fatback. Frankfurter leberkas ball tip alcatra cow doner shoulder chicken boudin buffalo meatloaf cupim. Ball tip jowl pork corned beef chicken capicola, pastrami t-bone boudin pancetta pork belly burgdoggen hamburger beef ham hock.
+	</p>
+
+	<h2>Comments ({{ comments|length }})</h2>
+
+	<ul>
+		{% for comment in comments %}
+			<li>{{ comment }}</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
