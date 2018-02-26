@@ -2,13 +2,14 @@
 My personal website
 
 ## Usage
-1. Clone the repo
-2. Install dependencies, running `composer install`
-3. Start the server, using `bin/console server:run`
+1. Clone the repo `git clone git@github.com:webbertakken/ItchyBitchySpider`
+2. Navigate to the symfony folder `cd ItchyBitchySpider/symfony`
+2. Install dependencies `composer install`
+3. Start the server `bin/console server:run`
 4. Enjoy!
 
 ## Development
-Read [development.md](development.md) to set yourself up for development.
+Read [development.md](symfony/development.md) to set yourself up for development.
 
 ## Contributing
 Found an error or wish to contribute?
