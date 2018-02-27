@@ -7,6 +7,11 @@
 {% block content %}
 	<h1>{{ title }}</h1>
 
+	<span class="article-details">
+		<span class="js-like-article-count">5</span>
+		<a href="{{  path('article_toggle_heart', { slug: slug }) }}" class="fa fa-heart-o like-article js-like-article"><3</a>
+	</span>
+
 	<p>
 		Spicy jalapeno bacon ipsum dolor amet pancetta fatback biltong pork belly sausage jerky cow boudin doner meatloaf. Pig ham hock strip steak shoulder beef turducken. Turducken shoulder pork chop pancetta strip steak jowl leberkas, turkey corned beef filet mignon venison capicola prosciutto. Brisket turducken tri-tip tail pork chop boudin rump salami pancetta turkey doner bresaola cupim.
 	</p>
@@ -22,4 +27,10 @@
 			<li>{{ comment }}</li>
 		{% endfor %}
 	</ul>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+
+	<script src="{{ asset('js/article.show.js') }}"></script>
 {% endblock %}

@@ -10,6 +10,9 @@
 			{% block content %}{% endblock %}
 		{% endblock %}
 
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<script src="{{ asset('js/domready.js') }}"></script>
+		{% endblock %}
     </body>
 </html>
