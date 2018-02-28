@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}
-			{% block content %}{% endblock %}
-		{% endblock %}
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}Welcome!{% endblock %}</title>
 
-        {% block javascripts %}
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-			<script src="{{ asset('js/domready.js') }}"></script>
-		{% endblock %}
-    </body>
+	{% block stylesheets %}
+		<link rel="stylesheet" href="{{ asset('build/css/app.css') }}" type="text/css"/>
+	{% endblock %}
+</head>
+<body>
+	{% block body %}
+		{% block content %}{% endblock %}
+	{% endblock %}
+
+	{% block javascripts %}
+		<script src="{{ asset('build/js/app.js') }}"></script>
+		<script src="{{ asset('js/domready.js') }}"></script>
+	{% endblock %}
+</body>
 </html>

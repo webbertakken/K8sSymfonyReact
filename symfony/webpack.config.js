@@ -24,6 +24,10 @@ Encore
 
     // use Sass/SCSS files
     .enableSassLoader()
+
+    // enable notifications
+    .enableBuildNotifications()
+
 ;
 
 module.exports = Encore.getWebpackConfig();
