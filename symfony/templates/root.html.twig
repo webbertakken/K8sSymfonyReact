@@ -1,0 +1,24 @@
+{#- The very root of all templates, in compliance with twbs4 best practices -#}
+
+{#- Indenting this file differently will break the source code cleanliness -#}
+
+{%- block doctype -%}
+<!doctype html>
+{%- endblock %}
+
+<html lang="{{ app_language|default('en') }}">
+<head>
+
+{% block meta %}{% endblock %}
+
+{% block styles %}{% endblock %}
+
+{% block head_scripts %}{% endblock %}
+</head>
+<body>
+
+{% block content %}{% endblock %}
+
+{% block scripts %}{% endblock %}
+</body>
+</html>

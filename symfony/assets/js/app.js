@@ -1,5 +1,4 @@
-// temporarily use jquery
-const $ = require('jquery');
+require('bootstrap');
 
 // temporarily assign jquery global
-window.$ = $;
+window.$ = require('jquery');

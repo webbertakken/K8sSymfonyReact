@@ -1,0 +1,12 @@
+// Fixes for bootstrap 4
+//
+// This file contains fixes for cross browser operability.
+// Source: https://getbootstrap.com/docs/4.0/getting-started/browsers-devices/
+
+
+// print bug-fix: https://github.com/twbs/bootstrap/issues/14868
+@media print {
+  .container {
+	width: auto;
+  }
+}

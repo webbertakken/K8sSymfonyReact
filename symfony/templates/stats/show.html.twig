@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+  <h1>Stats</h1>
+
+  <ul>
+    <li>Environment: {{ app.environment }}</li>
+  </ul>
+
+  <ul>
+    <li>{{ "now"|date("Y-m-d H:i:s e") }}</li>
+    <li>php version {{ php_version }}</li>
+  </ul>
+{% endblock %}

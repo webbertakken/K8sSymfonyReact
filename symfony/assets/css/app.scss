@@ -1,7 +1,5 @@
-$color: #cea0a0;
+@charset "UTF-8";
 
-body {
-  h1 {
-	color: $color;
-  }
-}
+@import "bootstrap-custom";
+@import "~bootstrap/scss/bootstrap";
+@import "bootstrap-fixes";

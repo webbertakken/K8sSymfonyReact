@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>{% block title %}Welcome!{% endblock %}</title>
+{% extends 'root.html.twig' %}
 
-	{% block stylesheets %}
-		<link rel="stylesheet" href="{{ asset('build/css/app.css') }}" type="text/css"/>
-	{% endblock %}
-</head>
-<body>
-	{% block body %}
-		{% block content %}{% endblock %}
-	{% endblock %}
+{% block meta %}
+  <meta charset="{{ app_language|default('UTF-8') }}"/>
+  <meta name="viewport" content="{{ app_viewport|default('width=device-width, initial-scale=1, shrink-to-fit=no') }}">
+{% endblock %}
 
-	{% block javascripts %}
-		<script src="{{ asset('build/js/app.js') }}"></script>
-		<script src="{{ asset('js/domready.js') }}"></script>
-	{% endblock %}
-</body>
-</html>
+{% block styles %}
+  <link rel="stylesheet" href="{{ asset('build/css/app.css') }}" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+  I'm a page. Content goes here!
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ asset('build/js/app.js') }}"></script>
+{% endblock %}
