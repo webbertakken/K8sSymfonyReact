@@ -1,8 +1,4 @@
 <?php
-/**
- * @date   2018-02-24
- * @author webbe
- */
 
 namespace App\Controller;
 
@@ -13,9 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Class ArticleController
- *
- * @package App\Controller
+ * Class ArticleController.
  */
 class ArticleController extends AbstractController
 {
@@ -31,6 +25,7 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/news/{slug}", name="article_show")
+     *
      * @param $slug
      *
      * @return \Symfony\Component\HttpFoundation\Response
@@ -44,14 +39,15 @@ class ArticleController extends AbstractController
         ];
 
         return $this->render('article/show.html.twig', [
-           'title' => ucwords(str_replace('-', ' ', $slug)),
-           'slug' => $slug,
-           'comments' => $comments,
+            'title' => ucwords(str_replace('-', ' ', $slug)),
+            'slug' => $slug,
+            'comments' => $comments,
         ]);
     }
 
     /**
      * @Route("/news/{slug}/heart", name="article_toggle_heart", methods={"POST"})
+     *
      * @param                          $slug
      * @param \Psr\Log\LoggerInterface $logger
      *

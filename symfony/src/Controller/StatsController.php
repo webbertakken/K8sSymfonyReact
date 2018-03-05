@@ -7,9 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Class StatsController
- *
- * @package App\Controller
+ * Class StatsController.
  */
 class StatsController extends AbstractController
 {

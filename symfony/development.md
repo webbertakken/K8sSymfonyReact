@@ -9,25 +9,37 @@
     - node
     - npm
     - yarn
+    - docker & docker-compose
 
 Any other requirements are taken care of by packages that are managed by the above tools.
 
-## Setting up PhpStorm
-### Plugins
+## Getting started
+### Grab the project
+1. Clone the repo `git clone git@github.com:webbertakken/ItchyBitchySpider`.
+2. Install back-end packages, running `composer install`.
+3. Install front-end packages, running `yarn`.
+
+### General settings
 1. Download and install the following plugins
     - Symfony Plugin
     - PHP Annotations
     - PHP Toolbox
-2. Enable the Symfony plugin under the plugin-section with `web directory` set to `public` and otherwise default settings.
-3. Register the composer executable under the composer plugin-section. 
+    - PHP Inspections (EA Extended)
 
-## Usage
-### Getting started
-1. Clone the repo `git clone git@github.com:webbertakken/ItchyBitchySpider`.
-2. Install back-end packages, running `composer install`.
-3. Install front-end packages, running `yarn`.
-3. Start the server, using `bin/console server:run`.
-4. Start Devving! 
+### Project settigns
+1. Enable the Symfony plugin under the plugin-section with `web directory` set to `public` and otherwise default settings.
+2. Register the composer executable under the composer plugin-section.
+3. Configure PHP-CS-Fixer; using `.php_cs.dist` as config file;
+    * as an [external program](https://hackernoon.com/how-to-configure-phpstorm-to-use-php-cs-fixer-1844991e521f), or;
+    * as [file watcher](https://gist.github.com/mpalourdio/46f792347cf9d46b121c#gistcomment-1786139) that runs on save. 
+
+### Start Devving!
+1. Start application using `docker-compose up`
+2. Start the asset dev-server running `yarn run dev-server`, for live reloading scss and jsx
+
+### Stop Devving
+1. End the asset dev-server using ctrl-c
+2. Stop the application running `docker-compose down`
 
 ## Troubleshooting
 ### Update software
