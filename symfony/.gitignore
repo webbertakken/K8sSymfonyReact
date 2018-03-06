@@ -1,5 +1,6 @@
 # Custom
 /.idea/
+yarn-error.log
 
 ###> symfony/framework-bundle ###
 .env
