@@ -7,5 +7,6 @@ return PhpCsFixer\Config::create()
         'concat_space' => [
             'spacing' => 'one',
         ],
+        'phpdoc_var_without_name' => false,
     ])
 ;

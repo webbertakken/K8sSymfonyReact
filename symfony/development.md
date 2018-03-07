@@ -37,18 +37,23 @@ __Note:__ The rest of all documentation assumes the prerequisites are met.
 3. Install front-end packages, running `yarn`.
 
 ### Project settings
-Go to `Settings` > `Languages and Frameworks`.
+Go to `Settings` > `Editor` > `Dictionary`.
+* Register `dictionary.dic` as an additional custom dictionary.
+    * __note:__ that [custom dictionaries can't be chosen for words saving](
+https://youtrack.jetbrains.com/issue/WI-36432#comment=27-2503889
+) yet. The only way to commit new words is to add them to the _project dictionary_
+and then copy & paste them into `dictionary.dic`.
 
-* Section `Javascript`
-    * Set _Javascript language version_ to `React JSX`.
-    * Enable _ESLint_ under _Code Quality Tools_ of this section.
+Go to `Settings` > `Languages and Frameworks` > `Javascript`
+* Set _Javascript language version_ to `React JSX`.
+* Enable _ESLint_ under _Code Quality Tools_ of this section.
     
-* Section `Node.js & NPM`
-    * Enable _Coding assistance for NodeJs_.
+Go to `Settings` > `Languages and Frameworks` > `Node.js & NPM`
+* Enable _Coding assistance for NodeJs_.
     
-* Section `PHP`
-    * Enable the _Symfony plugin_ and set `web directory` to `public`.
-    * Enable the _Composer plugin_ and register the Composer executable.
+Go to `Settings` > `Languages and Frameworks` > `PHP`
+* Enable the _Symfony plugin_ and set `web directory` to `public`.
+* Enable the _Composer plugin_ and register the Composer executable.
 
 Go to `Settings` > `Tools`.
 
@@ -56,7 +61,7 @@ Go to `Settings` > `Tools`.
     * as an [external program](https://hackernoon.com/how-to-configure-phpstorm-to-use-php-cs-fixer-1844991e521f), or;
     * as [file watcher](https://gist.github.com/mpalourdio/46f792347cf9d46b121c#gistcomment-1786139) that runs on save.
     
-Go to `Other Settings`.
+Go to `Settings` > `Other Settings`.
 
 * Enable _Sass Lint_ and register the SassLint executable.
 
