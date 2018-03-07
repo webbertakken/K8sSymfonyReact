@@ -26,6 +26,7 @@ Development will go like a breeze; follow the recommendations unless you know wh
     - PHP Inspections (EA Extended)
     - Twig
     - ESLint
+    - SassLint
 
 __Note:__ The rest of all documentation assumes the prerequisites are met.
 
@@ -53,7 +54,11 @@ Go to `Settings` > `Tools`.
 
 * Configure _PHP-CS-Fixer_; using `.php_cs.dist` as config file;
     * as an [external program](https://hackernoon.com/how-to-configure-phpstorm-to-use-php-cs-fixer-1844991e521f), or;
-    * as [file watcher](https://gist.github.com/mpalourdio/46f792347cf9d46b121c#gistcomment-1786139) that runs on save. 
+    * as [file watcher](https://gist.github.com/mpalourdio/46f792347cf9d46b121c#gistcomment-1786139) that runs on save.
+    
+Go to `Other Settings`.
+
+* Enable _Sass Lint_ and register the SassLint executable.
 
 ### Starting the application
 1. Start application using `docker-compose up`
@@ -62,6 +67,20 @@ Go to `Settings` > `Tools`.
 ### Stopping the application
 1. End the asset dev-server using ctrl-c
 2. Stop the application running `docker-compose down`
+
+### Linting
+* To check if all javascript files are OK, run ESLint:
+```
+$ yarn run eslint
+```
+* To check if all sass files are OK, run sass-lint:
+```
+$ yarn run sass-lint
+```
+* To run all linters at once (useful before committing) run the following command:
+```
+$ yarn run lint
+```
 
 ## Troubleshooting
 ### Update software

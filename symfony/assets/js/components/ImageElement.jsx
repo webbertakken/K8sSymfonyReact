@@ -7,7 +7,15 @@ export default class ImageElement extends Component {
   }
 
   componentDidMount() {
-    this.setState({ loading: 'false' });
+    this.isLoaded(true);
+  }
+
+  isLoaded(bool) {
+    if (bool === true) {
+      this.setState({ loading: 'false' });
+    } else {
+      this.setState({ loading: 'true' });
+    }
   }
 
   render() {
