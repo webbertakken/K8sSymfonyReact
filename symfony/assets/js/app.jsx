@@ -5,6 +5,7 @@ import 'bootstrap';
 
 // Import components
 import ImageElement from './components/ImageElement';
+import Layout from './components/FrameLayout';
 
 // Import images
 import image from '../images/screwdriver.png';
@@ -13,10 +14,12 @@ import image from '../images/screwdriver.png';
 window.$ = $;
 
 // Mount components
-const checkout = document.getElementById('react-root');
+const checkout = document.getElementById('application');
 if (checkout) {
   ReactDOM.render([
-    <ImageElement image={image} alt="testing" />,
+    <Layout>
+      <ImageElement image={image} alt="testing" />
+    </Layout>,
   ], checkout);
 }
 

@@ -1,0 +1,93 @@
+// Styles for <FrameLayout> which is showing a border around the content.
+// Depends on bootstrap4.
+
+// Variables
+$frame-background: $broken-white !default;
+$frame-border-dark: #1d3b29 !default;
+$frame-border-bright: #75b175 !default;
+$frame-border-sizes: (
+  xl: 18px,
+  lg: 15px,
+  md: 12px,
+  sm:  9px
+) !default;
+
+// Mixins
+@mixin respond-to($breakpoint) {
+  @if(map-has-key($grid-breakpoints, $breakpoint)) {
+    @include media-breakpoint-down($breakpoint) {
+      @content;
+    }
+  }
+}
+
+// Styles
+#layout {
+  display: flex;
+
+  @keyframes fadeInFadeOut {
+    0% {
+      opacity: 0
+    }
+
+    50% {
+      opacity: 1
+    }
+
+    100% {
+      opacity: 0
+    }
+  }
+
+  #frame {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      content: "";
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      transition: border-width .3s;
+      border-style: solid;
+
+      // Adapt border to all screen sizes
+      @each $breakpoint, $border-size in $frame-border-sizes {
+        @include respond-to($breakpoint) {
+          border-width: $border-size;
+        }
+      }
+    }
+
+    &::before {
+      display: block;
+      border-image: linear-gradient(135deg, $frame-border-dark, $frame-border-bright) 1;
+    }
+
+    &::after {
+      display: block;
+      border-image: linear-gradient(135deg, $frame-border-bright, $frame-border-dark) 1;
+      opacity: 0;
+      will-change: opacity;
+      animation: fadeInFadeOut 15s ease-in-out infinite;
+    }
+  }
+
+  #content {
+    background: $frame-background;
+    min-height: 100vh;
+
+    // Adapt padding to #frame's border, by screen size
+    @each $breakpoint, $border-size in $frame-border-sizes {
+      @include respond-to($breakpoint) {
+        padding: $border-size;
+      }
+    }
+  }
+}
