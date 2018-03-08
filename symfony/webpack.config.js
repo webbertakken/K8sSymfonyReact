@@ -1,3 +1,17 @@
+/**
+ * Webpack configuration.
+ *
+ * @requires composer-package:symfony/flex
+ * @requires composer-recipe:encore
+ *
+ * @requires module:babel-preset-react
+ * @requires module:babel-preset-stage-1
+ * @requires module:node-sass
+ * @requires module:sass-loader
+ * @requires module:webpack-notifier
+ *
+ * @author WebberTakken <webber@takken.io>.
+ */
 const Encore = require('@symfony/webpack-encore');
 
 Encore
@@ -22,16 +36,16 @@ Encore
   // Define style assets
   .addStyleEntry('css/app', './assets/css/app.scss')
 
-  // Use Sass/SCSS files
+  // Use Sass/SCSS files (node-sass, sass-loader)
   .enableSassLoader()
 
-  // Enable notifications
+  // Enable notifications (webpack-notifier)
   .enableBuildNotifications()
 
-  // Enable React/JSX
+  // Enable React/JSX (babel-preset-react)
   .enableReactPreset()
 
-  // Enable ES6 proposal stage
+  // Enable ES6 proposal stage (babel-preset-stage-1)
   .configureBabel((config) => {
     config.presets.push('stage-1');
   });

@@ -7,6 +7,7 @@
 // Color system
 //
 
+// @formatter:off
 $absolute-white: #ffffff;
 $regular-white:  #fffdf7;
 $broken-white:   #f9f6f0;
@@ -83,3 +84,4 @@ $theme-colors: map-merge((
     "light":      $light,
     "dark":       $dark
 ), $theme-colors);
+// @formatter:on

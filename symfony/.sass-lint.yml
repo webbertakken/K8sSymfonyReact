@@ -1,8 +1,13 @@
+##
+# Sass-lint configuration using rather strict rules
+#
 # Rules: https://github.com/sasstools/sass-lint/tree/master/docs/rules
+#
+# Author: WebberTakken <webber@takken.io>
+##
 options:
   formatter: stylish
   merge-default-rules: false
-  max-warnings: 50
 
 files:
   include: 'assets/**/*.s+(a|c)ss'

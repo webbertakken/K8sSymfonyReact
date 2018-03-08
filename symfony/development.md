@@ -5,10 +5,10 @@ Below information will guide you through developing and contributing to the proj
 ## Prerequisites
 Development will go like a breeze; follow the recommendations unless you know what you're doing :)
 
-* Install [PhpStorm](https://www.jetbrains.com/phpstorm/) or [WebStorm](https://www.jetbrains.com/webstorm/) installed.
+* Install [PhpStorm](https://www.jetbrains.com/phpstorm/) or [WebStorm](https://www.jetbrains.com/webstorm/).
 
 * Have the following software accessible through the CLI
- 
+
     - git
     - php
     - composer
@@ -17,7 +17,7 @@ Development will go like a breeze; follow the recommendations unless you know wh
     - yarn
     - docker
     - docker-compose
-    
+
 * Install the following plugins
 
     - Symfony Plugin
@@ -27,6 +27,7 @@ Development will go like a breeze; follow the recommendations unless you know wh
     - Twig
     - ESLint
     - SassLint
+    - EditorConfig
 
 __Note:__ The rest of all documentation assumes the prerequisites are met.
 
@@ -37,7 +38,10 @@ __Note:__ The rest of all documentation assumes the prerequisites are met.
 3. Install front-end packages, running `yarn`.
 
 ### Project settings
-Go to `Settings` > `Editor` > `Dictionary`.
+Go to `Settings` > `Editor` > `Code Style`.
+* Enable the setting _"Enable formatter markers in comments"_.
+
+Go to `Settings` > `Editor` > `Spelling`.
 * Register `dictionary.dic` as an additional custom dictionary.
     * __note:__ that [custom dictionaries can't be chosen for words saving](
 https://youtrack.jetbrains.com/issue/WI-36432#comment=27-2503889
@@ -47,10 +51,10 @@ and then copy & paste them into `dictionary.dic`.
 Go to `Settings` > `Languages and Frameworks` > `Javascript`
 * Set _Javascript language version_ to `React JSX`.
 * Enable _ESLint_ under _Code Quality Tools_ of this section.
-    
+
 Go to `Settings` > `Languages and Frameworks` > `Node.js & NPM`
 * Enable _Coding assistance for NodeJs_.
-    
+
 Go to `Settings` > `Languages and Frameworks` > `PHP`
 * Enable the _Symfony plugin_ and set `web directory` to `public`.
 * Enable the _Composer plugin_ and register the Composer executable.
@@ -60,7 +64,7 @@ Go to `Settings` > `Tools`.
 * Configure _PHP-CS-Fixer_; using `.php_cs.dist` as config file;
     * as an [external program](https://hackernoon.com/how-to-configure-phpstorm-to-use-php-cs-fixer-1844991e521f), or;
     * as [file watcher](https://gist.github.com/mpalourdio/46f792347cf9d46b121c#gistcomment-1786139) that runs on save.
-    
+
 Go to `Settings` > `Other Settings`.
 
 * Enable _Sass Lint_ and register the SassLint executable.
@@ -78,10 +82,12 @@ Go to `Settings` > `Other Settings`.
 ```
 $ yarn run eslint
 ```
+
 * To check if all sass files are OK, run sass-lint:
 ```
 $ yarn run sass-lint
 ```
+
 * To run all linters at once (useful before committing) run the following command:
 ```
 $ yarn run lint
@@ -120,5 +126,3 @@ $ rm -rf ./public/build/*
 $ docker-compose up
 $ yarn run dev-server
 ```
-
-
