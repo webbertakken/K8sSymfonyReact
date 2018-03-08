@@ -1,0 +1,27 @@
+##
+# Editor configuration.
+#
+# Overrides IDE's defaults, to reflect correct indentations, brackets, end of line characters etc., allowing you to work
+# with this project. This configuration requires the EditorConfig Plugin.
+#
+# Author: WebberTakken <webber@takken.io>
+##
+
+# Indicate that this is the top-most EditorConfig.
+root = true
+
+# All files must be UTF-8 encoded, have unix-style line-endings, no trailing spaces and end with a blank line.
+# Additionally all file types use 2-space indentations, with the exception of PHP files where the indentation is 4.
+# It's in line with most current standards for Php, Javascript, Coffeescript, Typescript, React, Twig, Html, Sass etc.
+# and is the original default spacing in NPM's package.json.
+[**]
+charset = utf-8
+end_of_line = lf
+ident_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Php accepted standard (PSR-2, Symfony)
+[{**.{php,phtml},php_cs.dist,console,phpunit}]
+indent_size = 4
