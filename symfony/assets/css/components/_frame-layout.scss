@@ -9,12 +9,12 @@ $frame-border-sizes: (
   xl: 18px,
   lg: 15px,
   md: 12px,
-  sm:  9px
+  sm: 9px
 ) !default;
 
 // Mixins
 @mixin respond-to($breakpoint) {
-  @if(map-has-key($grid-breakpoints, $breakpoint)) {
+  @if (map-has-key($grid-breakpoints, $breakpoint)) {
     @include media-breakpoint-down($breakpoint) {
       @content;
     }

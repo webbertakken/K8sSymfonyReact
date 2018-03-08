@@ -7,7 +7,7 @@ $(document).ready(function() {
 
     $.ajax({
       method: 'POST',
-      url: $link.attr('href')
+      url: $link.attr('href'),
     }).done(function(data) {
       $('.js-like-article-count').html(data.hearts);
     });

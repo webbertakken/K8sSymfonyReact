@@ -19,7 +19,7 @@ if (!isset($_SERVER['APP_ENV'])) {
     (new Dotenv())->load(__DIR__ . '/../.env');
 }
 
-$env = $_SERVER['APP_ENV'] ?? 'dev';
+$env   = $_SERVER['APP_ENV'] ?? 'dev';
 $debug = $_SERVER['APP_DEBUG'] ?? ('prod' !== $env);
 
 // Enable dev tools
@@ -45,8 +45,8 @@ if ($trustedHosts) {
 }
 
 // Handle lifecycle of a request
-$kernel = new Kernel($env, $debug);
-$request = Request::createFromGlobals();
+$kernel   = new Kernel($env, $debug);
+$request  = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);

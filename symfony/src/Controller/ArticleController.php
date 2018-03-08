@@ -38,11 +38,14 @@ class ArticleController extends AbstractController
             'Prosciutto andouille burgdoggen swine leberkas beef corned beef.',
         ];
 
-        return $this->render('article/show.html.twig', [
-            'title' => ucwords(str_replace('-', ' ', $slug)),
-            'slug' => $slug,
-            'comments' => $comments,
-        ]);
+        return $this->render(
+            'article/show.html.twig',
+            [
+                'title' => ucwords(str_replace('-', ' ', $slug)),
+                'slug' => $slug,
+                'comments' => $comments,
+            ]
+        );
     }
 
     /**
