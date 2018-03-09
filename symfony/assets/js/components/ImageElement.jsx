@@ -22,7 +22,8 @@ export default class ImageElement extends Component {
     const { loading, image, alt } = this.state;
     return (
       <div>
-        <span>Loading: {loading}</span><br /><img src={image} alt={alt} />
+        <span>Loading: {loading}</span><br />
+        <img src={image} alt={alt} />
       </div>
     );
   }

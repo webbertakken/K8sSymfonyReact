@@ -8,10 +8,7 @@
 //
 
 // @formatter:off
-$absolute-white: #ffffff;
-$regular-white:  #fffdf7;
-$broken-white:   #f9f6f0;
-
+$white:    #ffffff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
@@ -59,7 +56,7 @@ $colors: map-merge((
     "green":      $green,
     "teal":       $teal,
     "cyan":       $cyan,
-    "white":      $absolute-white,
+    "white":      $white,
     "gray":       $gray-600,
     "gray-dark":  $gray-800
 ), $colors);

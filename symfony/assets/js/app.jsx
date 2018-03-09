@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import 'bootstrap';
 
-// Import components
 import ImageElement from './components/ImageElement';
 import Layout from './components/FrameLayout';
 
-// Import images
 import image from '../images/screwdriver.png';
 
 // Assign globals

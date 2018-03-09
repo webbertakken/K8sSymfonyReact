@@ -1,0 +1,34 @@
+// @formatter:off
+$absolute-white:         #ffffff;
+// article
+$regular-white:          #fffdf7;
+// body-bg
+$broken-white:           #f9f6f0;
+// text color
+$app-color-text:         #1b1c15;
+// a
+$app-color-primary:      #f90430;
+// Logo, Table head
+$color-app-logo:         #75b175;
+$color-app-logo-alt:     #82fa82;
+// menu
+$color-app-main:         #1d3b29;
+$color-app-main-alt:     #8e9d94;
+// Table rows
+$color-app-subtle:       #e8f0e5;
+$color-app-subtle-alt:   #fffcf4;
+$color-app-subtle-hover: #d6e9da;
+// code
+$color-code-bg:          #b3cbba;
+$color-code-text:        #1b1c15;
+// @formatter:on
+
+// shadow
+$box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+
+// FrameLayout-component
+$frame-background-color: $broken-white;
+$frame-border-dark-color: #3a7351;
+$frame-border-bright-color: #75b175;
+$frame-animation-time: 15s;
+
