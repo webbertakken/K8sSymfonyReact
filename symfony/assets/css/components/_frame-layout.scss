@@ -4,10 +4,10 @@
 // Author: WebberTakken <webber@takken.io>
 
 // Defaults
-$frame-background-color: transparent !default;
-$frame-border-dark-color: #007331 !default;
-$frame-border-bright-color: #aa1337 !default;
 $frame-animation-time: 13.37s !default;
+$frame-background-color: transparent !default;
+$frame-border-color-bright: #aa1337 !default;
+$frame-border-color-dark: #007331 !default;
 $frame-border-sizes: (
   xl: 18px,
   lg: 15px,
@@ -31,7 +31,7 @@ $frame-border-sizes: (
 %frame-border {
   border: solid transparent;
   // Adapt border to all screen sizes
-  transition: border-width .3s;
+  transition: border .3s ease-in-out;
   @each $breakpoint, $border-size in $frame-border-sizes {
     @include respond-to($breakpoint) {
       border-width: $border-size;
@@ -57,7 +57,7 @@ $frame-border-sizes: (
     height: 100vh;
     z-index: 100;
     pointer-events: none;
-    border-image: linear-gradient(135deg, $frame-border-dark-color, $frame-border-bright-color) 1;
+    border-image: linear-gradient(135deg, $frame-border-color-dark, $frame-border-color-bright) 1;
 
     &::before,
     &::after {
@@ -71,15 +71,15 @@ $frame-border-sizes: (
     &::before {
       @extend %frame-border;
       box-sizing: content-box;
-      border-image: linear-gradient(135deg, $frame-border-bright-color, $frame-border-dark-color) 1;
+      border-image: linear-gradient(135deg, $frame-border-color-bright, $frame-border-color-dark) 1;
 
       // Animation
       opacity: 0;
       will-change: opacity;
       animation: fadeInFadeOut $frame-animation-time ease-in-out infinite;
 
-      // Adapt margin to all screen sizes
-      transition: margin .3s;
+      // Adapt margin to all screen sizes, keep border easing
+      transition: border .3s ease-in-out, margin .3s ease-in-out;
       @each $breakpoint, $border-size in $frame-border-sizes {
         @include respond-to($breakpoint) {
           margin: -$border-size;
@@ -92,10 +92,10 @@ $frame-border-sizes: (
       box-sizing: border-box;
 
       // Adapt shadow size to the size of the border
-      transition: box-shadow .3s;
+      transition: box-shadow .3s ease-in-out;
       @each $breakpoint, $border-size in $frame-border-sizes {
         @include respond-to($breakpoint) {
-          box-shadow: 0 0 $border-size #000000;
+          box-shadow: 0 0 $border-size darken($frame-border-color-dark, 20%);
         }
       }
     }
@@ -106,7 +106,7 @@ $frame-border-sizes: (
     min-height: 100vh;
 
     // Adapt padding to #frame's border, by screen size
-    transition: padding .3s;
+    transition: padding .3s ease-in-out;
     @each $breakpoint, $border-size in $frame-border-sizes {
       @include respond-to($breakpoint) {
         padding: $border-size;

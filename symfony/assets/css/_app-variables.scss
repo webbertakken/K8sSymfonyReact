@@ -4,13 +4,16 @@ $absolute-white:         #ffffff;
 $regular-white:          #fffdf7;
 // body-bg
 $broken-white:           #f9f6f0;
+// paper or one-pager
+$paper-white:            #fff1d9;
 // text color
 $app-color-text:         #1b1c15;
 // a
 $app-color-primary:      #f90430;
 // Logo, Table head
 $color-app-logo:         #75b175;
-$color-app-logo-alt:     #82fa82;
+$color-app-logo-bright:  #82fa82;
+$color-app-logo-dark:    #3a7351;
 // menu
 $color-app-main:         #1d3b29;
 $color-app-main-alt:     #8e9d94;
@@ -28,7 +31,7 @@ $box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 
 // FrameLayout-component
 $frame-background-color: $broken-white;
-$frame-border-dark-color: #3a7351;
-$frame-border-bright-color: #75b175;
+$frame-border-color-bright: $color-app-logo-bright;
+$frame-border-color-dark: $color-app-logo-dark;
 $frame-animation-time: 15s;
 
