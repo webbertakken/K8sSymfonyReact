@@ -114,7 +114,7 @@ $ npm install --global npm
 ##### Updating yarn
 To update yarn, run the following command:
 ```
-$ npm upgrade --global yarn
+$ npm install --global yarn
 ```
 
 ### Unlock built assets 

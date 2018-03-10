@@ -3,6 +3,7 @@
  *
  * @requires module:babel-eslint
  * @requires module:eslint-config-airbnb
+ * @requires module:eslint-plugin-babel
  * @requires module:eslint-plugin-import
  * @requires module:eslint-plugin-jsx-a11y
  * @requires module:eslint-plugin-react
@@ -13,6 +14,10 @@ module.exports = {
   "root": true,
   "parser": "babel-eslint",
   "extends": "airbnb",
+  "plugins": [
+    "babel",
+    "react",
+  ],
   "env": {
     "node": true,
     "es6": true,

@@ -4,8 +4,9 @@
  * @requires composer-package:symfony/flex
  * @requires composer-recipe:encore
  *
+ * @requires module:babel-preset-env
  * @requires module:babel-preset-react
- * @requires module:babel-preset-stage-1
+ * @requires module:babel-preset-stage-0
  * @requires module:node-sass
  * @requires module:sass-loader
  * @requires module:webpack-notifier
@@ -15,7 +16,7 @@
 const Encore = require('@symfony/webpack-encore');
 
 Encore
-  // The project directory where compiled assets will be stored
+// The project directory where compiled assets will be stored
   .setOutputPath('public/build/')
 
   // The public path used by the web server to access the previous directory
@@ -42,12 +43,13 @@ Encore
   // Enable notifications (webpack-notifier)
   .enableBuildNotifications()
 
-  // Enable React/JSX (babel-preset-react)
-  .enableReactPreset()
-
-  // Enable ES6 proposal stage (babel-preset-stage-1)
+  // Enable browser/JSX/React/ES6-strawman (babel-preset-*)
   .configureBabel((config) => {
-    config.presets.push('stage-1');
+    config.presets.push(
+      ['env', { targets: { browsers: ['last 2 versions', 'safari >= 7'] } }],
+      ['react'],
+      ['stage-0'],
+    );
   });
 
 module.exports = Encore.getWebpackConfig();
