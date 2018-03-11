@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import 'bootstrap';
 
-import ImageElement from './components/ImageElement';
 import Layout from './components/FrameLayout';
-
-import image from '../images/screwdriver.png';
 
 // Assign globals
 window.$ = $;
@@ -16,7 +13,7 @@ const checkout = document.getElementById('application');
 if (checkout) {
   ReactDOM.render([
     <Layout>
-      <ImageElement image={image} alt="testing" />
+      Under construction
     </Layout>,
   ], checkout);
 }

@@ -7,9 +7,9 @@ const MaintenancePage = () => (
     <div className="message-block">
       <object className="logo" type="image/svg+xml" data={barbecue} aria-label="BrowserIcon" />
       <div className="message">
-        <h1 className="title">This site can&#39;t be reached</h1>
+        <h1 className="title">This site is under maintenance</h1>
         <span className="subtitle">
-          <strong>spider.wtf</strong> is under maintenance, though it&#39;s nice barbecue weather.
+          Downtime is expected to take no longer than one barbecue party.
         </span>
       </div>
     </div>

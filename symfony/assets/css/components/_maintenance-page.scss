@@ -1,7 +1,7 @@
 // Keyframes
-@keyframes backgroundRightToCenter {
-  from { background-position: right -111% top }
-  to { background-position: left -111% top }
+@keyframes background700RightToLeft {
+  from { background-position: right -800px top }
+  to { background-position: left -800px top }
 }
 
 // Styles
@@ -15,7 +15,7 @@
   // Background
   background: url('../../images/spider.wtf.png') no-repeat 50% 0;
   will-change: background-position;
-  animation: backgroundRightToCenter 30s linear infinite;
+  animation: background700RightToLeft 30s linear infinite;
 
   .message-block {
     display: flex;
@@ -45,43 +45,41 @@
 
 // Breakpoints
 @include media-breakpoint-down(sm) {
-  .maintenance-page {
-    animation: none;
-    background-size: contain;
+  .maintenance-page .message-block {
+    .logo {
+      width: 10vw;
+      height: 10vw;
+      min-width: 32px;
+      min-height: 32px;
+    }
 
-    .message-block {
-      .logo {
-        width: 10vw;
-        height: 10vw;
-        min-width: 32px;
-        min-height: 32px;
+    .message {
+      .title {
+        font-size: 5vw;
       }
 
-      .message {
-        padding: 15px;
-
-        .title {
-          font-size: 5vw;
-        }
-
-        .subtitle {
-          font-size: 2vw;
-        }
+      .subtitle {
+        font-size: 2vw;
       }
     }
   }
 }
 
 @include media-breakpoint-down(xs) {
-  .maintenance-page .message-block .message {
-    padding: 0 0 0 12px;
+  .maintenance-page {
+    animation: none;
+    background-size: contain;
 
-    .title {
-      margin-bottom: 0;
-    }
+    .message-block .message {
+      padding: 0 0 0 12px;
 
-    .subtitle {
-      display: none;
+      .title {
+        margin-bottom: 0;
+      }
+
+      .subtitle {
+        display: none;
+      }
     }
   }
 }
