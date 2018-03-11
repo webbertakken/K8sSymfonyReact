@@ -11,6 +11,15 @@
 
 {% block meta %}{% endblock %}
 
+  <title>
+    {%- block title -%}
+      {{- app_title|default('Spider.wtf') -}}
+      {% if page_title is defined %}
+        {{- ' - ' ~ page_title -}}
+      {% endif %}
+    {%- endblock -%}
+  </title>
+
 {% block styles %}{% endblock %}
 
 {% block head_scripts %}{% endblock %}

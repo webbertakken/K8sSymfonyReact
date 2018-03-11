@@ -33,6 +33,7 @@ Encore
 
   // Define the script assets
   .addEntry('js/app', './assets/js/app.jsx')
+  .addEntry('js/maintenance', './assets/js/maintenance.jsx')
 
   // Define style assets
   .addStyleEntry('css/app', './assets/css/app.scss')
