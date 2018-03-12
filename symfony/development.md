@@ -29,7 +29,9 @@ Development will go like a breeze; follow the recommendations unless you know wh
     - SassLint
     - EditorConfig
 
-__Note:__ The rest of all documentation assumes the prerequisites are met.
+__Note:__ The rest of all documentation assumes the prerequisites are met.  
+__Note:__ When using Docker Toolbox on Windows, make sure to disable experimental features, 
+because of this [issue](https://github.com/docker/for-win/issues/573#issuecomment-288940904).
 
 ## Getting started
 ### Grab the project
