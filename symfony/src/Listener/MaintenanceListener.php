@@ -32,7 +32,7 @@ class MaintenanceListener
         }
 
         if ($this->container->has('twig')) {
-            $maintenance = $this->container->get('twig')->render('maintenance.html.twig');
+            $maintenance = $this->container->get('twig')->render('_system/maintenance.html.twig');
         } else {
             $maintenance = '<html>Apache is functioning normally</html>';
         }

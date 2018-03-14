@@ -32,4 +32,4 @@ framework:
 
   # Asset versioning enabled
   assets:
-    json_manifest_path: '%kernel.project_dir%/public/build/manifest.json'
+    json_manifest_path: '%kernel.project_dir%/public/application/manifest.json'

@@ -2,17 +2,17 @@
 
 {#- Indenting this file differently will break the source code cleanliness -#}
 
-{%- block doctype -%}
+{%- block root_doctype -%}
 <!doctype html>
 {%- endblock %}
 
 <html lang="{{ app_language|default('en') }}">
 <head>
 
-{% block meta %}{% endblock %}
+{% block root_meta %}{% endblock %}
 
   <title>
-    {%- block title -%}
+    {%- block root_title -%}
       {{- app_title|default('Spider.wtf') -}}
       {% if page_title is defined %}
         {{- ' - ' ~ page_title -}}
@@ -20,14 +20,14 @@
     {%- endblock -%}
   </title>
 
-{% block styles %}{% endblock %}
+{% block root_styles %}{% endblock %}
 
-{% block head_scripts %}{% endblock %}
+{% block root_head_scripts %}{% endblock %}
 </head>
 <body>
 
-{% block content %}{% endblock %}
+{% block root_content %}{% endblock %}
 
-{% block scripts %}{% endblock %}
+{% block root_scripts %}{% endblock %}
 </body>
 </html>

@@ -1,0 +1,37 @@
+{% extends '_includes/root.html.twig' %}
+
+{# variable 'page_title' can be used to set the page/application part of the title #}
+
+{% block root_meta %}
+  <meta charset="{{ app_language|default('UTF-8') }}" />
+  <meta name="viewport" content="{{ app_viewport|default('width=device-width, initial-scale=1, shrink-to-fit=no') }}" />
+{% block meta %}{% endblock %}
+{% endblock %}
+
+{% block root_styles %}
+  <link rel="stylesheet" href="{{ asset('application/styles.css') }}" type="text/css" />
+{% block styles %}{% endblock %}
+{% endblock %}
+
+{% block root_head_scripts %}
+  {#- no default head scripts -#}
+  {%- block head_scripts %}
+    {#- Page specific head scripts -#}
+  {% endblock -%}
+{% endblock %}
+
+{% block root_content %}
+  <div id="application">
+  {%- block content %}
+    {# Content goes here #}
+  {% endblock -%}
+  </div>
+{% endblock %}
+
+{% block root_scripts %}
+  <script src="{{ asset('application/scripts.js') }}"></script>
+{% block scripts %}
+  {#- Application/Page script goes here -#}
+{% endblock %}
+
+{% endblock %}

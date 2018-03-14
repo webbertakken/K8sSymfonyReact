@@ -124,7 +124,7 @@ Sometimes it may happen that switching between different asset generation method
 blocks the files from being manipulated. Run the following commands:
 ```
 $ docker-compose down
-$ rm -rf ./public/build/* 
+$ rm -rf ./public/application/* 
 $ docker-compose up
 $ yarn run dev-server
 ```

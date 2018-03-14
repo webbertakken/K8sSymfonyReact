@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'react_base.html.twig' %}
 
 {% block title %}
   {{ title }}
@@ -40,7 +40,5 @@
 {% endblock %}
 
 {% block scripts %}
-  {{ parent() }}
-
   <script src="{{ asset('js/article.show.js') }}"></script>
 {% endblock %}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import barbecue from '../../icons/barbeque-flat.svg';
+import barbecue from './icons/barbeque-flat.svg';
 
 const MaintenancePage = () => (
   <div className="maintenance-page">
