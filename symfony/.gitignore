@@ -20,7 +20,7 @@ yarn-error.log
 
 ###> symfony/webpack-encore-pack ###
 /node_modules/
-/public/application/
+/public/assets/
 ###< symfony/webpack-encore-pack ###
 
 ###> friendsofphp/php-cs-fixer ###

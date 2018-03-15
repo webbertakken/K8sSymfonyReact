@@ -1,6 +1,12 @@
 @charset "UTF-8";
 
+// Global styles
 @import "styles/app-variables";
 @import "styles/bootstrap-variables";
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "styles/bootstrap-fixes";
+
+// Temporary component tree
+// TODO - Figure out how to combine global bootstrap and local component styles.
+@import "components/**/*.scss";
+@import "scenes/**/*.scss";

@@ -1,4 +1,4 @@
-{% extends 'react_base.html.twig' %}
+{% extends 'html_base.html.twig' %}
 
 {% block title %}
   {{ title }}
@@ -37,8 +37,4 @@
       <li>{{ comment }}</li>
     {% endfor %}
   </ul>
-{% endblock %}
-
-{% block scripts %}
-  <script src="{{ asset('js/article.show.js') }}"></script>
 {% endblock %}

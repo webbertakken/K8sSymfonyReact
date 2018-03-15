@@ -17,13 +17,13 @@ const Encore = require('@symfony/webpack-encore');
 
 Encore
 // The project directory where compiled assets will be stored
-  .setOutputPath('public/application')
+  .setOutputPath('public/assets')
 
   // The public path used by the web server to access the previous directory
-  .setPublicPath('/application')
+  .setPublicPath('/assets')
 
   // Empty the output directory between each build
-  .cleanupOutputBeforeBuild()
+  .cleanupOutputBeforeBuild(['**/*'])
 
   // Render all final CSS and JS files with source maps to help debugging
   .enableSourceMaps(!Encore.isProduction())
@@ -32,14 +32,14 @@ Encore
   .enableVersioning(Encore.isProduction())
 
   // Main scripts and styles definition
-  .addEntry('scripts', './assets/app.jsx')
-  .addStyleEntry('styles', './assets/app.scss')
+  .addEntry('app', './assets/app.jsx')
 
   // Scene entries
   .addEntry('scenes/maintenance', './assets/scenes/Maintenance')
 
   // Use Sass/SCSS files (node-sass, sass-loader)
   .enableSassLoader()
+  .addLoader({ test: /\.scss$/, loader: 'import-glob-loader' })
 
   // Enable notifications (webpack-notifier)
   .enableBuildNotifications()
