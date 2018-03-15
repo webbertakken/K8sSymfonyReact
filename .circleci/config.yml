@@ -51,7 +51,7 @@ jobs:
       - run:
           name: Installing application (part 2)
           command: |
-            npm install --global yarn
+            sudo npm install --global yarn
             yarn install
 
       - save_cache:
