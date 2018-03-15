@@ -1,5 +1,5 @@
 # Development
-This is the development section. For information on the project, see [README.md](../README.md). 
+This is the development section. For information on the project, see [README.md](README.md). 
 Below information will guide you through developing and contributing to the project.
 
 ## Prerequisites

@@ -16,7 +16,7 @@ Below an easy 6 steps to get the application up and running
 
 ## Contributing
 If you're looking to fork, contribute or submit a correction; please read 
-[symfony/development.md](symfony/development.md) to go through a few quick steps to get you started!
+[development.md](symfony/development.md) to go through a few quick steps to get you started!
 
 ## Copyright
 Copyright (c) Webber, MIT license.
