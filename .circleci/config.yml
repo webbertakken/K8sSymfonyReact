@@ -19,7 +19,11 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependencies
+      # Install testing dependencies
+      - run: sudo docker-php-ext-install zip
+
+      # Install PHP dependencies
+      - run: sudo composer self-update
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "composer.json" }}
