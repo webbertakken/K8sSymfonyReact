@@ -21,10 +21,10 @@ jobs:
 
       # Install testing dependencies (no prod packages here)
       - run:
-        name: Installing Test Dependencies
-        command: |
-          sudo apt install -y zlib1g-dev
-          sudo docker-php-ext-install zip
+          name: Installing Test Dependencies
+          command: |
+            sudo apt install -y zlib1g-dev
+            sudo docker-php-ext-install zip
 
       # Install application dependencies
       - restore_cache:
@@ -38,10 +38,10 @@ jobs:
           - yarn-deps-
 
       - run:
-        name: Installing application (part 1)
-        command: |
-          sudo composer self-update
-          composer install -n --prefer-dist
+          name: Installing application (part 1)
+          command: |
+            sudo composer self-update
+            composer install -n --prefer-dist
 
       - save_cache:
           paths:
@@ -49,10 +49,10 @@ jobs:
           key: composer-deps-{{ checksum "composer.lock" }}
 
       - run:
-        name: Installing application (part 2)
-        command: |
-          npm install --global yarn
-          yarn install
+          name: Installing application (part 2)
+          command: |
+            npm install --global yarn
+            yarn install
 
       - save_cache:
           paths:
