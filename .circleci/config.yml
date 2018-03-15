@@ -19,24 +19,48 @@ jobs:
     steps:
       - checkout
 
-      # Install testing dependencies
-      - run: sudo apt install -y zlib1g-dev
-      - run: sudo docker-php-ext-install zip
+      # Install testing dependencies (no prod packages here)
+      - run:
+        name: Installing Test Dependencies
+        command: |
+          sudo apt install -y zlib1g-dev
+          sudo docker-php-ext-install zip
 
-      # Install PHP dependencies
-      - run: sudo composer self-update
+      # Install application dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "composer.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          - composer-deps-{{ checksum "composer.lock" }}
+          - composer-deps-
 
-      - run: composer install -n --prefer-dist
+      - restore_cache:
+          keys:
+          - yarn-deps-{{ checksum "yarn.lock" }}
+          - yarn-deps-
+
+      - run:
+        name: Installing application (part 1)
+        command: |
+          sudo composer self-update
+          composer install -n --prefer-dist
 
       - save_cache:
           paths:
             - ./vendor
-          key: v1-dependencies-{{ checksum "composer.json" }}
+          key: composer-deps-{{ checksum "composer.lock" }}
+
+      - run:
+        name: Installing application (part 2)
+        command: |
+          npm install --global yarn
+          yarn install
+
+      - save_cache:
+          paths:
+            - ./node_modules
+          key: yarn-deps-{{ checksum "yarn.lock" }}
 
       # run tests!
-      - run: vendor/bin/simple-phpunit
+      - run:
+        name: Testing application
+        command: |
+          vendor/bin/simple-phpunit
