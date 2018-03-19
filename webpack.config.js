@@ -17,13 +17,17 @@ const Encore = require('@symfony/webpack-encore');
 
 Encore
 // The project directory where compiled assets will be stored
-  .setOutputPath('public/assets')
+  .setOutputPath('public')
 
   // The public path used by the web server to access the previous directory
-  .setPublicPath('/assets')
+  .setPublicPath('/')
 
-  // Empty the output directory between each build
-  .cleanupOutputBeforeBuild(['**/*'])
+  // Empty the output directory between each build, leaving index.php
+  .cleanupOutputBeforeBuild(['public'], (options) => {
+    options.verbose = true;
+    options.root = __dirname;
+    options.exclude = ['index.php'];
+  })
 
   // Render all final CSS and JS files with source maps to help debugging
   .enableSourceMaps(!Encore.isProduction())
