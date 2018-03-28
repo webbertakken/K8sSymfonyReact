@@ -1,6 +1,7 @@
+import 'react';
+import 'react-dom';
 import $ from 'jquery';
 import 'bootstrap';
-
 import './app.scss';
 
 // Temporarily add script directly

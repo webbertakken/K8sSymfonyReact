@@ -29,6 +29,7 @@
 {% endblock %}
 
 {% block root_scripts %}
+  <script src="{{ asset('manifest.js') }}"></script>
   <script src="{{ asset('app.js') }}"></script>
 {% block scripts %}
   {#- Application/Page script goes here -#}

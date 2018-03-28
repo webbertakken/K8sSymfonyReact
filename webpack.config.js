@@ -33,10 +33,10 @@ Encore
   .enableSourceMaps(!Encore.isProduction())
 
   // Create hashed file names (e.g. app.abc123.css)
-  .enableVersioning(Encore.isProduction())
+  .enableVersioning()
 
   // Main scripts and styles definition
-  .addEntry('app', './assets/app.jsx')
+  .createSharedEntry('app', './assets/app.jsx')
 
   // Scene entries
   .addEntry('scenes/maintenance', './assets/scenes/Maintenance')
