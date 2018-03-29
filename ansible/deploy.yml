@@ -1,0 +1,38 @@
+---
+- hosts: production
+
+  vars_files:
+    - ./vars/vault.yml
+    - ./vars/vars.yml
+    - ./vars/deploy_vars.yml
+
+  vars_prompt:
+    - name: git_branch
+      prompt: 'Enter a branch to deploy'
+      default: master
+      private: no
+
+  vars:
+    - release_console_path: "{{ ansistrano_release_path.stdout }}/bin/console"
+    - ansistrano_deploy_to: "{{ project_deploy_dir }}"
+    - ansistrano_deploy_via: git
+    - ansistrano_git_repo: git@github.com:webbertakken/ItchyBitchySpider.git
+    - ansistrano_git_branch: "{{ git_branch }}"
+    - ansistrano_git_identity_key_path: "{{ playbook_dir }}/deploy_key"
+    - ansistrano_git_ssh_opts: "-o StrictHostKeyChecking=no"
+    - ansistrano_after_symlink_shared_tasks_file: "{{ playbook_dir }}/deploy/after-symlink-shared.yml"
+      become: true
+
+  roles:
+    - carlosbuenosvinos.ansistrano-deploy
+
+  environment:
+    TMPDIR: "/home/{{ ansible_user }}/tmp"
+    TMP: "/home/{{ ansible_user }}/tmp"
+    #> START .ENV.DIST <#
+    APP_MAINTENANCE: true
+    ###> symfony/framework-bundle ###
+    APP_ENV: prod
+    APP_SECRET: "{{ app_secret }}"
+    ###> doctrine/doctrine-bundle ###
+    DATABASE_URL: "{{ db_protocol }}://{{ db_user }}:{{ db_pass }}@{{ db_host }}:{{ db_port }}/{{ db_name }}"

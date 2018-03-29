@@ -1,0 +1,12 @@
+---
+# Ansible connection configuration
+ansible_user: webber
+ansible_port: 23
+ansible_ssh_private_key_file: ~/.ssh/spider_wtf_connect_key
+ansible_python_interpreter: /usr/bin/python
+host_server_name: spider.wtf
+
+# Deployment playbook configuration
+home_folder_user: webber
+domain_name: spider.wtf
+machine_deploy_dir: "/home/{{ home_folder_user }}/domains/{{ domain_name }}"

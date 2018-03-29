@@ -95,6 +95,24 @@ $ yarn run sass-lint
 $ yarn run lint
 ```
 
+## Testing & Deploying
+#### Testing
+Run PhpUnit
+```
+$ php bin/phpunit
+```
+#### Building
+After each pushed commit on any branch, an automatic build will be generated to
+test the quality of the additions.
+
+#### Deploying
+Read [ansible/README.md](ansible/README.md) to find out how to deploy the application.
+
+## Optimising
+#### Assets
+Since versioning is applied to all asset files; Apache/Nginx can be configured to
+send long-lived expires-headers for all asset files to have browsers cache them indefinitely.
+
 ## Troubleshooting
 ### Update software
 ##### Updating NodeJs
