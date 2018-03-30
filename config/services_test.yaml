@@ -1,5 +1,6 @@
 services:
   _defaults:
+    # allow integration tests to access containers services
     public: true
 
     # If you need to access services in a test, create an alias
