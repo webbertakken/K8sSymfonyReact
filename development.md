@@ -24,6 +24,7 @@ Development will go like a breeze; follow the recommendations unless you know wh
     - PHP Annotations
     - PHP Toolbox
     - PHP Inspections (EA Extended)
+    - PHPUnit Enhancement
     - Twig
     - ESLint
     - SassLint
