@@ -7,10 +7,10 @@ services:
 #monolog:
 #  handlers:
 #    buffered:
-#      type:     buffer
-#      handler:  easylog
+#      type: buffer
+#      handler: easylog
 #      channels: ['!event']
-#      level:    debug
+#      level: debug
 #    easylog:
 #      type: service
-#      id:   EasyCorp\EasyLog\EasyLogHandler
+#      id: EasyCorp\EasyLog\EasyLogHandler
