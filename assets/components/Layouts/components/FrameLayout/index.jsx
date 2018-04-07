@@ -21,7 +21,7 @@ export default class FrameLayout extends Component {
 
   render() {
     return (
-      <div id="layout">
+      <div id="layout" className="frame">
         <div id="frame" />
         <div id="body">
           {this.props.children}
