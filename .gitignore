@@ -26,6 +26,7 @@ yarn-error.log
 /node_modules/
 /public/
 !/public/index.php
+!/public/static/
 ###< symfony/webpack-encore-pack ###
 
 ###> friendsofphp/php-cs-fixer ###
