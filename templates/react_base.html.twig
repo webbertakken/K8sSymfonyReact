@@ -11,6 +11,7 @@
 {% block root_styles %}
   <link rel="stylesheet" href="{{ asset('app.css') }}" type="text/css" />
 {% block styles %}{% endblock %}
+  <link rel="icon" href="{{ asset('static/images/brand/favicon.svg') }}">
 {% endblock %}
 
 {% block root_head_scripts %}
@@ -28,7 +29,7 @@
   <script src="{{ asset('manifest.js') }}"></script>
   <script src="{{ asset('app.js') }}"></script>
 {% block application %}
-  {#- Application/Page script goes here -#}
+  {#- scenes or pages go here -#}
 {% endblock %}
 
 {% endblock %}
