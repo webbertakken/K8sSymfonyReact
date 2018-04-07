@@ -26,14 +26,14 @@ Encore
   .cleanupOutputBeforeBuild(['public'], (options) => {
     options.verbose = true;
     options.root = __dirname;
-    options.exclude = ['index.php'];
+    options.exclude = ['index.php', 'static'];
   })
 
   // Render all final CSS and JS files with source maps to help debugging
   .enableSourceMaps(!Encore.isProduction())
 
   // Create hashed file names (e.g. app.abc123.css)
-  .enableVersioning()
+  .enableVersioning(Encore.isProduction())
 
   // Main scripts and styles definition
   .createSharedEntry('app', './assets/app.jsx')
