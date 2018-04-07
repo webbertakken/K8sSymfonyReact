@@ -14,6 +14,12 @@ module.exports = {
   "root": true,
   "parser": "babel-eslint",
   "extends": "airbnb",
+  "rules": {
+    // fix for https://github.com/airbnb/javascript/issues/1584
+    "function-paren-newline": ["error", "consistent"],
+    // fix for callback functions ability to modify properties
+    "no-param-reassign": ["error", { "props": false }],
+  },
   "plugins": [
     "babel",
     "react",
