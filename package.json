@@ -41,7 +41,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev-server": "encore dev-server",
+    "dev-server": "encore dev-server --hot",
     "dev": "encore dev",
     "watch": "encore dev --watch",
     "build": "encore production",
