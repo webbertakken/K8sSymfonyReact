@@ -1,0 +1,16 @@
+// Override the important overflow hidden rule from react-perfect-scrollbar on class ps
+@media (min-width: 992px) {
+  .sidebar-minimized .sidebar .sidebar-nav {
+    overflow: visible !important;
+  }
+}
+
+// This style is missing entirely in the vendor package @coreui/styles
+@media (max-width: 991.98px) {
+  .sidebar .sidebar-minimizer {
+    display: none;
+  }
+}
+
+// Account for incomplete or empty files in @coreui/styles@2.0.0-alpha.1
+@import "coreui-fix-missing-widgets";

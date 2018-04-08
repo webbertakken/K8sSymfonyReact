@@ -30,8 +30,16 @@ $color-code-text:        #1b1c15;
 $box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 
 // FrameLayout-component
+$frame-animation-time: 10s;
 $frame-background-color: $broken-white;
 $frame-border-color-bright: $color-app-logo-bright;
 $frame-border-color-dark: $color-app-logo-dark;
-$frame-animation-time: 10s;
-
+$frame-border-color-bright: #aa1337;
+$frame-border-color-dark: #007331;
+$frame-border-sizes: (
+  xl: 18px,
+  lg: 15px,
+  md: 12px,
+  sm: 9px,
+  xs: 6px,
+);

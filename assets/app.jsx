@@ -1,8 +1,12 @@
+// App core scripts and styles
+/* eslint-disable no-unused-vars */
 import 'react';
 import 'react-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import $ from 'jquery';
 import 'bootstrap';
 import './app.scss';
+/* eslint-enable no-unused-vars */
 
 // Temporarily add script directly
 $(document).ready(() => {

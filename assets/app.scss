@@ -1,12 +1,34 @@
 @charset "UTF-8";
 
-// Global styles
+//
+// Variables
+//
 @import "styles/app-variables";
-@import "styles/bootstrap-variables";
-@import "../node_modules/bootstrap/scss/bootstrap";
-@import "styles/bootstrap-fixes";
+@import "styles/bootstrap-and-coreui-variables";
 
-// Temporary component tree
-// TODO - Figure out how to combine global bootstrap and local component styles.
-@import "components/**/*.scss";
-@import "scenes/**/*.scss";
+//
+// Main styles
+//
+@import "~bootstrap/scss/bootstrap";
+@import "~@coreui/styles/scss/coreui";
+@import "styles/coreui-framelayout-compatibility";
+
+//
+// Standalone Libraries
+//
+@import '~flag-icon-css/sass/flag-icon';
+@import "~font-awesome/scss/font-awesome";
+@import '~simple-line-icons/scss/simple-line-icons';
+
+//
+// Fixes
+//
+@import "styles/bootstrap-fixes";
+@import "styles/coreui-fixes";
+
+
+//
+// Components
+//
+@import "components/**/*scss";
+@import "scenes/**/*scss";

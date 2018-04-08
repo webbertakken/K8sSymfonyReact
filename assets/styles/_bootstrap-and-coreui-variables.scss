@@ -1,0 +1,162 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+//
+// Color system
+//
+
+// @formatter:off
+// stylelint-disable
+$white:          #ffffff;
+$gray-100:       #f0f3f5 !default;
+$gray-200:       #c2cfd6 !default;
+$gray-300:       #a4b7c1 !default;
+$gray-400:       #869fac !default;
+$gray-500:       #678898 !default;
+$gray-600:       #536c79 !default;
+$gray-700:       #3e515b !default;
+$gray-800:       #29363d !default;
+$gray-900:       #151b1e !default;
+$black:          #000000;
+
+$grays: () !default;
+$grays: map-merge((
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+), $grays);
+
+// Core UI colors
+$coreui-blue:           #20a8d8 !default;
+$coreui-red:            #f86c6b !default;
+$coreui-orange:         #f8cb00 !default;
+$coreui-yellow:         #ffc107 !default;
+$coreui-green:          #4dbd74 !default;
+$coreui-light-blue:     #63c2de !default;
+
+// Bootstrap 4 colors
+$bs4-blue:    #007bff !default;
+$bs4-indigo:  #6610f2 !default;
+$bs4-purple:  #6f42c1 !default;
+$bs4-pink:    #e83e8c !default;
+$bs4-red:     #dc3545 !default;
+$bs4-orange:  #fd7e14 !default;
+$bs4-yellow:  #ffc107 !default;
+$bs4-green:   #28a745 !default;
+$bs4-teal:    #20c997 !default;
+$bs4-cyan:    #17a2b8 !default;
+
+// Combined defaults
+$blue:        $coreui-blue !default;
+$light-blue:  $coreui-light-blue !default;
+$indigo:      $bs4-indigo !default;
+$purple:      $bs4-purple !default;
+$pink:        $bs4-pink !default;
+$red:         $coreui-red !default;
+$orange:      $coreui-orange !default;
+$yellow:      $coreui-yellow !default;
+$green:       $coreui-green !default;
+$teal:        $bs4-teal !default;
+$cyan:        $bs4-cyan !default;
+
+// Colors map
+$colors: () !default;
+$colors: map-merge((
+    "blue":       $coreui-blue,
+    "light-blue": $light-blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $coreui-red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800
+), $colors);
+
+// Theme colors
+$primary:       $blue !default;
+//$secondary:   $gray-600 !default;
+$secondary:     $gray-300 !default; // CoreUI
+$success:       $green !default;
+//$info:        $cyan !default;
+$info:          $coreui-light-blue !default; // CoreUI
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+// Theme colors map
+$theme-colors: () !default;
+$theme-colors: map-merge((
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+), $theme-colors);
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-transitions:              true !default;
+$enable-rounded:                  false !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg:                         #e4e5e6 !default;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+$border-color:                    $gray-200 !default;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-size-base:                  .875rem !default;
+
+// Breadcrumbs
+$breadcrumb-bg:                   $white !default;
+$breadcrumb-margin-bottom:        1.5rem !default;
+
+// Cards
+$card-border-color:               $gray-200 !default;
+$card-cap-bg:                     $gray-100 !default;
+
+// Dropdowns
+$dropdown-padding-y:              0 !default;
+$dropdown-border-color:           $gray-200 !default;
+$dropdown-divider-bg:             $gray-100 !default;
+
+// Buttons
+$btn-secondary-border:            $gray-300 !default;
+
+// Progress bars
+$progress-bg:                     $gray-100 !default;
+
+// Tables
+$table-bg-accent:                 $gray-100 !default;
+$table-bg-hover:                  $gray-100 !default;
+
+// Forms
+$input-group-addon-bg:            $gray-100 !default;
+$input-border-color:              $gray-200 !default;
+$input-group-addon-border-color:  $gray-200 !default;
+// @formatter:on
