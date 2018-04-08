@@ -1,0 +1,9 @@
+{% extends 'react_base.html.twig' %}
+
+{% block body_attributes -%}
+  app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden breadcrumb-fixed
+{%- endblock %}
+
+{% block application %}
+  <script src="{{ asset('scenes/demo.js') }}"></script>
+{% endblock %}

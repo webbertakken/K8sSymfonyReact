@@ -40,6 +40,8 @@ Encore
 
   // Scene entries
   .addEntry('scenes/maintenance', './assets/scenes/Maintenance')
+  .addEntry('scenes/demo', './assets/scenes/Demo')
+  .addEntry('scenes/dashboard', './assets/scenes/Dashboard')
 
   // Use Sass/SCSS files (node-sass, sass-loader)
   .enableSassLoader()
