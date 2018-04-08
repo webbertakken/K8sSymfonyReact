@@ -38,6 +38,10 @@ Encore
   // Main scripts and styles definition
   .createSharedEntry('app', './assets/app.jsx')
 
+  // Asynchronous scripts
+  // Note: There is also the possibility of lazy loading imports in the browser
+  .addEntry('services/analytics', './assets/services/analytics')
+
   // Scene entries
   .addEntry('scenes/maintenance', './assets/scenes/Maintenance')
   .addEntry('scenes/demo', './assets/scenes/Demo')
@@ -50,11 +54,14 @@ Encore
   // Enable notifications (webpack-notifier)
   .enableBuildNotifications()
 
-  // Enable browser/JSX/React/ES6-strawman (babel-preset-*)
+  // Presets
   .configureBabel((config) => {
     config.presets.push(
+      // Enable transpiling down to browser compatibility
       ['env', { targets: { browsers: ['last 2 versions', 'safari >= 7'] } }],
+      // Enable JSX/React
       ['react'],
+      // Enable ES6-strawman (babel-preset-*)
       ['stage-0'],
     );
   });

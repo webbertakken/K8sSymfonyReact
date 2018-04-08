@@ -16,9 +16,9 @@
 
 {% block root_head_scripts %}
   {#- no default head scripts -#}
-  {%- block head_scripts %}
-    {#- Page specific head scripts -#}
-  {% endblock -%}
+{%- block head_scripts %}
+  {#- Page specific head scripts -#}
+{% endblock -%}
 {% endblock %}
 
 {% block root_content %}
@@ -36,4 +36,9 @@
   {#- Application/Page script goes here -#}
 {% endblock %}
 
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script async src="{{ asset('services/analytics.js') }}"></script>
+{% block async_scripts %}
+  {#- asynchronous scripts go here -#}
+{% endblock %}
 {% endblock %}
