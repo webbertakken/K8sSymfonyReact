@@ -5,8 +5,10 @@
  * @requires composer-recipe:encore
  *
  * @requires module:babel-preset-env
+ * @requires module:babel-preset-es2015
  * @requires module:babel-preset-react
  * @requires module:babel-preset-stage-0
+ * @requires module:babel-plugin-syntax-dynamic-import
  * @requires module:node-sass
  * @requires module:sass-loader
  * @requires module:webpack-notifier
@@ -38,10 +40,6 @@ Encore
   // Main scripts and styles definition
   .createSharedEntry('app', './assets/app.jsx')
 
-  // Asynchronous scripts
-  // Note: There is also the possibility of lazy loading imports in the browser
-  .addEntry('services/analytics', './assets/services/analytics')
-
   // Scene entries
   .addEntry('scenes/maintenance', './assets/scenes/Maintenance')
   .addEntry('scenes/demo', './assets/scenes/Demo')
@@ -54,11 +52,21 @@ Encore
   // Enable notifications (webpack-notifier)
   .enableBuildNotifications()
 
+  // Plugins
+  .configureBabel((config) => {
+    config.plugins.push(
+      // Enable using dynamic imports, using modular per-import chunks
+      ['syntax-dynamic-import'],
+    );
+  })
+
   // Presets
   .configureBabel((config) => {
     config.presets.push(
       // Enable transpiling down to browser compatibility
       ['env', { targets: { browsers: ['last 2 versions', 'safari >= 7'] } }],
+      // Enable transpiling ES2015 to ES5 for uglifying non-ignored modules
+      ['es2015'],
       // Enable JSX/React
       ['react'],
       // Enable ES6-strawman (babel-preset-*)
@@ -66,4 +74,8 @@ Encore
     );
   });
 
-module.exports = Encore.getWebpackConfig();
+const config = Encore.getWebpackConfig();
+
+config.module.rules[0].exclude = /node_modules\/(?!(autotrack|dom-utils))/;
+
+module.exports = config;
