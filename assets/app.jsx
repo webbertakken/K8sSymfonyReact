@@ -1,17 +1,27 @@
 /* eslint-disable no-unused-vars, no-undef */
 
-// App core scripts and styles
+// App core
 import 'react';
 import 'react-dom';
-import 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
+
+// Frontend frameworks
 import $ from 'jquery';
 import 'bootstrap';
+
+// Services
+import './services/analytics/withTracker';
+
+// Styles
 import './app.scss';
 
 // Asynchronous, on demand loading of analytics plugins
 window.addEventListener('load', () => {
+  let GoogleAnalytics = null;
+
   Promise
     .all([
+      import('react-ga').then((x) => { GoogleAnalytics = x; }),
       import('autotrack/lib/plugins/clean-url-tracker'),
       import('autotrack/lib/plugins/event-tracker'),
       import('autotrack/lib/plugins/impression-tracker'),
@@ -24,20 +34,20 @@ window.addEventListener('load', () => {
       import('autotrack/lib/plugins/url-change-tracker'),
     ])
     .then(() => {
-      ga('create', 'UA-77602014-1', 'auto', 'mainTracker');
+      GoogleAnalytics.initialize('UA-77602014-1');
 
-      ga('mainTracker.require', 'cleanUrlTracker');
-      ga('mainTracker.require', 'eventTracker');
-      ga('mainTracker.require', 'impressionTracker');
-      ga('mainTracker.require', 'maxScrollTracker');
-      ga('mainTracker.require', 'mediaQueryTracker');
-      ga('mainTracker.require', 'outboundFormTracker');
-      ga('mainTracker.require', 'outboundLinkTracker');
-      ga('mainTracker.require', 'pageVisibilityTracker');
-      ga('mainTracker.require', 'socialWidgetTracker');
-      ga('mainTracker.require', 'urlChangeTracker');
+      GoogleAnalytics.plugin.require('cleanUrlTracker');
+      GoogleAnalytics.plugin.require('eventTracker');
+      GoogleAnalytics.plugin.require('impressionTracker');
+      GoogleAnalytics.plugin.require('maxScrollTracker');
+      GoogleAnalytics.plugin.require('mediaQueryTracker');
+      GoogleAnalytics.plugin.require('outboundFormTracker');
+      GoogleAnalytics.plugin.require('outboundLinkTracker');
+      GoogleAnalytics.plugin.require('pageVisibilityTracker');
+      GoogleAnalytics.plugin.require('socialWidgetTracker');
+      GoogleAnalytics.plugin.require('urlChangeTracker');
 
-      ga('mainTracker.send', 'pageview');
+      GoogleAnalytics.pageview(window.location.pathname + window.location.search);
     });
 });
 /* eslint-enable no-unused-vars, no-undef */
