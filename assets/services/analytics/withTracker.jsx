@@ -3,15 +3,15 @@
  */
 
 import React, { Component } from 'react';
-import ReactGA from 'react-ga';
+import GoogleAnalytics from 'react-ga';
 
 export default function withTracker(WrappedComponent, options = {}) {
   const trackPage = (page) => {
-    ReactGA.set({
+    GoogleAnalytics.set({
       page,
       ...options,
     });
-    ReactGA.pageview(page);
+    GoogleAnalytics.pageview(page);
   };
 
   const HOC = class extends Component {

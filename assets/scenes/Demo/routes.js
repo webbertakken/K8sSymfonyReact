@@ -50,7 +50,7 @@ import Demo from './partials/Demo';
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 /* eslint-disable object-curly-newline */
 const routes = [
-  { path: '/', exact: true, name: 'Home', component: withTracker(Demo) },
+  { path: '/', exact: true, name: 'Home', component: Demo },
   { path: '/dashboard', name: 'Dashboard', component: withTracker(Dashboard) },
   { path: '/theme', exact: true, name: 'Theme', component: withTracker(Colors) },
   { path: '/theme/colors', name: 'Colors', component: withTracker(Colors) },
