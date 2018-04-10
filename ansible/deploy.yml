@@ -21,7 +21,6 @@
     - ansistrano_git_identity_key_path: "{{ playbook_dir }}/deploy_key"
     - ansistrano_git_ssh_opts: "-o StrictHostKeyChecking=no"
     - ansistrano_after_symlink_shared_tasks_file: "{{ playbook_dir }}/deploy/after-symlink-shared.yml"
-      become: true
 
   roles:
     - carlosbuenosvinos.ansistrano-deploy
@@ -30,7 +29,7 @@
     TMPDIR: "/home/{{ ansible_user }}/tmp"
     TMP: "/home/{{ ansible_user }}/tmp"
     #> START .ENV.DIST <#
-    APP_MAINTENANCE: true
+    APP_MAINTENANCE: false
     ###> symfony/framework-bundle ###
     APP_ENV: prod
     APP_SECRET: "{{ app_secret }}"
