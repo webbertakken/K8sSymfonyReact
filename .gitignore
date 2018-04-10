@@ -24,8 +24,9 @@ yarn-error.log
 
 ###> symfony/webpack-encore-pack ###
 /node_modules/
-/public/
+/public/*
 !/public/index.php
+!/public/.htaccess
 !/public/static/
 ###< symfony/webpack-encore-pack ###
 

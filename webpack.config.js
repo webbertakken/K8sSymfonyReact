@@ -28,7 +28,7 @@ Encore
   .cleanupOutputBeforeBuild(['public'], (options) => {
     options.verbose = true;
     options.root = __dirname;
-    options.exclude = ['index.php', 'static'];
+    options.exclude = ['.htaccess', 'index.php', 'static'];
   })
 
   // Render all final CSS and JS files with source maps to help debugging
