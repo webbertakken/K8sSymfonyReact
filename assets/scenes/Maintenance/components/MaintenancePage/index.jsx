@@ -3,7 +3,7 @@ import React from 'react';
 import barbecue from './icons/barbeque-flat.svg';
 
 const MaintenancePage = () => (
-  <div className="maintenance-page">
+  <div className="maintenance-page vwh-100">
     <div className="message-block">
       <object className="logo" type="image/svg+xml" data={barbecue} aria-label="BrowserIcon" />
       <div className="message">

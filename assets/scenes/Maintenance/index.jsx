@@ -8,8 +8,9 @@ import Index from './components/MaintenancePage';
 import Layout from '../../components/Layouts/components/FrameLayout';
 
 // Maintenance page
-ReactDOM.render([
+ReactDOM.render(
   <Layout>
-    <Index />,
+    <Index />
   </Layout>,
-], document.getElementById('application'));
+  document.getElementById('application'),
+);
