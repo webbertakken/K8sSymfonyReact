@@ -24,6 +24,16 @@ $frame-border-sizes: ( xl: 0 ) !default;
   }
 }
 
+.app:not(body),
+.app-dashboard:not(body),
+.app-root:not(body) {
+  @each $breakpoint, $border-size in $frame-border-sizes {
+    @include respond-to($breakpoint) {
+      min-height: calc(100vh - #{2 * $border-size});
+    }
+  }
+}
+
 // Header
 .header-fixed {
   #layout.frame {

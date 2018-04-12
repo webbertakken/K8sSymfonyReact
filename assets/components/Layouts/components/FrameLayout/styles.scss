@@ -40,7 +40,7 @@ $frame-border-sizes: (
 }
 
 // Styles
-#layout {
+#layout.frame {
   display: flex;
 
   // Animation
@@ -48,6 +48,24 @@ $frame-border-sizes: (
     0% { opacity: 0 }
     50% { opacity: 1 }
     100% { opacity: 0 }
+  }
+
+  .vh-100:not(body),
+  .vwh-100:not(body) {
+    @each $breakpoint, $border-size in $frame-border-sizes {
+      @include respond-to($breakpoint) {
+        min-height: calc(100vh - #{2 * $border-size});
+      }
+    }
+  }
+
+  .vw-100:not(body),
+  .vwh-100:not(body) {
+    @each $breakpoint, $border-size in $frame-border-sizes {
+      @include respond-to($breakpoint) {
+        width: calc(100vw - #{2 * $border-size});
+      }
+    }
   }
 
   #frame {
