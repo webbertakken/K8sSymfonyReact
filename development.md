@@ -30,6 +30,11 @@ Development will go like a breeze; follow the recommendations unless you know wh
     - SassLint
     - EditorConfig
 
+* Optional colors and styles that work well with this project
+
+    - Colors from my [PHPStormSettings](https://github.com/webbertakken/PHPStormSettings/tree/master/colors) repository
+    - [Material Theme](https://github.com/ChrisRM/material-theme-jetbrains) UI Plugin
+
 __Note:__ The rest of all documentation assumes the prerequisites are met.  
 __Note:__ When using Docker Toolbox on Windows, make sure to disable experimental features, 
 because of this [issue](https://github.com/docker/for-win/issues/573#issuecomment-288940904).
