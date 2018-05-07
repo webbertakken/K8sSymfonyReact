@@ -5,7 +5,9 @@ Below information will guide you through developing and contributing to the proj
 ## Prerequisites
 Development will go like a breeze; follow the recommendations unless you know what you're doing :)
 
-* Install [PhpStorm](https://www.jetbrains.com/phpstorm/) or [WebStorm](https://www.jetbrains.com/webstorm/).
+* Install [PhpStorm](https://www.jetbrains.com/phpstorm/),
+or [WebStorm](https://www.jetbrains.com/webstorm/),
+or alternatively [VS Code](https://code.visualstudio.com/), for which you'd have to find similar plugins by yourself.
 
 * Have the following software accessible through the CLI
 
