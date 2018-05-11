@@ -14,7 +14,7 @@ class DemoFooter extends Component {
     return (
       <React.Fragment>
         <span className="ml-auto">
-          Created with ❤ by Webber using&nbsp;
+          Created with <span style={{color: "red"}}>❤</span> by Webber using&nbsp;
           <a href="https://symfony.com/" target="_blank" rel="noopener noreferrer">Symfony</a>,&nbsp;
           <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React</a>,&nbsp;
           <a href="https://coreui.io/" target="_blank" rel="noopener noreferrer">CoreUI</a>,&nbsp;

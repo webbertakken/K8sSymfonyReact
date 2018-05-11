@@ -14,7 +14,7 @@ export default class Footer extends React.Component {
     return (
       <React.Fragment>
         <span className="ml-auto">
-          Created with ❤ by Webber
+          Created with <span style={{color: "red"}}>❤</span> by Webber
         </span>
       </React.Fragment>
     );
