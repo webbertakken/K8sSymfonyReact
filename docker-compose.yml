@@ -34,6 +34,8 @@ services:
             - php
         volumes:
             - ./logs/nginx/:/var/log/nginx:cached
+        labels:
+            kompose.service.type: loadbalancer
     elk:
         image: willdurand/elk
         ports:
