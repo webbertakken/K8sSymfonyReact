@@ -24,7 +24,7 @@ Encore
   // The public path used by the web server to access the previous directory
   .setPublicPath('/')
 
-  // Empty the output directory between each build, leaving index.php
+  // Empty the output directory between each build, leaving static files
   .cleanupOutputBeforeBuild(['public'], (options) => {
     options.verbose = true;
     options.root = __dirname;
