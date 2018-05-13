@@ -2,6 +2,8 @@ version: '2'
 services:
     db:
         build: .docker/mariadb
+        image: itchybitchyspider.azurecr.io/ibs-db:v1
+        container_name: ibs-db
         ports:
             - "3306:3306"
         environment:
@@ -11,6 +13,8 @@ services:
             MYSQL_PASSWORD: symfony
     php:
         build: .docker/php-fpm
+        image: itchybitchyspider.azurecr.io/ibs-php:v1
+        container_name: ibs-php
         ports:
             - "9000:9000"
         volumes:
@@ -20,6 +24,8 @@ services:
             - db
     nginx:
         build: .docker/nginx
+        image: itchybitchyspider.azurecr.io/ibs-nginx:v1
+        container_name: ibs-nginx
         ports:
             - "80:80"
         links:
