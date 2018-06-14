@@ -32,7 +32,8 @@ services:
         volumes:
             - ./logs/nginx/:/var/log/nginx:cached
         labels:
-            kompose.service.type: LoadBalancer
+            kompose.service.type: loadbalancer
+            kompose.service.expose: "true"
     elk:
         image: willdurand/elk
         ports:
