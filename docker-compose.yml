@@ -2,8 +2,7 @@ version: '2'
 services:
     db:
         build: .docker/mariadb
-        image: itchybitchyspider.azurecr.io/ibs-db:v1
-        container_name: ibs-db
+        image: itchybitchyspider.azurecr.io/ibs-mariadb:v1
         ports:
             - "3306:3306"
         environment:
@@ -14,7 +13,6 @@ services:
     php:
         build: .docker/php-fpm
         image: itchybitchyspider.azurecr.io/ibs-php:v1
-        container_name: ibs-php
         ports:
             - "9000:9000"
         volumes:
@@ -25,7 +23,6 @@ services:
     nginx:
         build: .docker/nginx
         image: itchybitchyspider.azurecr.io/ibs-nginx:v1
-        container_name: ibs-nginx
         ports:
             - "80:80"
         links:
@@ -35,7 +32,7 @@ services:
         volumes:
             - ./logs/nginx/:/var/log/nginx:cached
         labels:
-            kompose.service.type: loadbalancer
+            kompose.service.type: LoadBalancer
     elk:
         image: willdurand/elk
         ports:
