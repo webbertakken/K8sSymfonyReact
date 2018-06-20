@@ -2,7 +2,7 @@ version: '2'
 services:
     db:
         build: .docker/mariadb
-        image: itchybitchyspider.azurecr.io/ibs-mariadb:v1
+        image: eu.gcr.io/webber-takken/ibs-mariadb
         ports:
             - "3306:3306"
         environment:
@@ -12,7 +12,7 @@ services:
             MYSQL_PASSWORD: symfony
     php:
         build: .docker/php-fpm
-        image: itchybitchyspider.azurecr.io/ibs-php:v1
+        image: eu.gcr.io/webber-takken/ibs-php
         ports:
             - "9000:9000"
         volumes:
@@ -22,7 +22,7 @@ services:
             - db
     nginx:
         build: .docker/nginx
-        image: itchybitchyspider.azurecr.io/ibs-nginx:v1
+        image: eu.gcr.io/webber-takken/ibs-nginx
         ports:
             - "80:80"
         links:
@@ -31,8 +31,6 @@ services:
             - php
         volumes:
             - ./logs/nginx/:/var/log/nginx:cached
-        labels:
-            kompose.service.type: LoadBalancer
     elk:
         image: willdurand/elk
         ports:
