@@ -5,9 +5,10 @@ MAINTAINER Webber Takken <webber@takken.io>
 RUN apk add --update nginx
 RUN rm -rf /var/cache/apk/* && rm -rf /tmp/*
 
-ADD nginx.conf /etc/nginx/
-ADD symfony.conf /etc/nginx/conf.d/
-ADD upstream.conf /etc/nginx/conf.d/
+COPY nginx.conf /etc/nginx/
+RUN rm -rf /etc/nginx/conf.d/*
+COPY symfony.conf /etc/nginx/conf.d/
+COPY upstream.conf /etc/nginx/conf.d/
 
 RUN adduser -D -g '' -G www-data www-data
 
