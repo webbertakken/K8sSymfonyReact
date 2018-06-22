@@ -2,8 +2,8 @@ FROM willdurand/elk
 
 MAINTAINER Webber Takken <webber@takken.io>
 
-ADD logstash/logstash.conf /etc/logstash
-ADD logstash/patterns /opt/logstash/patterns
+COPY logstash/logstash.conf /etc/logstash
+COPY logstash/patterns /opt/logstash/patterns
 
 CMD [ "/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf" ]
 
