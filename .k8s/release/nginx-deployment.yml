@@ -6,13 +6,11 @@ metadata:
   name: nginx
   namespace: itchybitchyspider
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app: nginx
       tier: frontend
-  strategy:
-    type: Recreate
+  replicas: 2
   template:
     metadata:
       labels:
@@ -20,18 +18,19 @@ spec:
         tier: frontend
     spec:
       containers:
-      - name: ibs-nginx
+      - name: nginx
         image: eu.gcr.io/webber-takken/ibs-nginx
-#        resources:
-#          requests:
-#            cpu: 100m
-#            memory: 100Mi
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
         ports:
         - containerPort: 80
         - containerPort: 443
-        resources: {}
-      restartPolicy: Always
-status: {}
+        lifecycle:
+          preStop:
+            exec:
+              command: ["/usr/sbin/nginx","-s","quit"]
 ---
 apiVersion: v1
 kind: Service
@@ -44,10 +43,10 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - name: http
-      port: 80
-    - name: https
-      port: 443
+  - name: http
+    port: 80
+  - name: https
+    port: 443
   selector:
     app: nginx
     tier: frontend
