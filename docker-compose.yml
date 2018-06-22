@@ -1,8 +1,8 @@
 version: '2'
 services:
     db:
-        build: .docker/mariadb
-        image: eu.gcr.io/webber-takken/ibs-mariadb
+        build: .k8s/images/dev/mariadb
+        image: ibs-mariadb
         ports:
             - "3306:3306"
         environment:
@@ -11,8 +11,8 @@ services:
             MYSQL_USER: symfony
             MYSQL_PASSWORD: symfony
     php:
-        build: .docker/php-fpm
-        image: eu.gcr.io/webber-takken/ibs-php
+        build: .k8s/images/dev/php-fpm
+        image: ibs-php
         ports:
             - "9000:9000"
         volumes:
@@ -21,8 +21,8 @@ services:
         links:
             - db
     nginx:
-        build: .docker/nginx
-        image: eu.gcr.io/webber-takken/ibs-nginx
+        build: .k8s/images/dev/nginx
+        image: ibs-nginx
         ports:
             - "80:80"
         links:
@@ -32,12 +32,10 @@ services:
         volumes:
             - ./logs/nginx/:/var/log/nginx:cached
     elk:
-        image: willdurand/elk
+        build: .k8s/images/dev/elk
+        image: ibs-elk
         ports:
             - "81:80"
-        volumes:
-            - .docker/elk/logstash:/etc/logstash:cached
-            - .docker/elk/logstash/patterns:/opt/logstash/patterns:cached
         volumes_from:
             - php
             - nginx
