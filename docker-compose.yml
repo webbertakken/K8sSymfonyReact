@@ -11,7 +11,7 @@ services:
             MYSQL_USER: symfony
             MYSQL_PASSWORD: symfony
     php:
-        build: .k8s/images/dev/php-fpm
+        build: .k8s/images/base/php-fpm
         image: ibs-php
         ports:
             - "9000:9000"
