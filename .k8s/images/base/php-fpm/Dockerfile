@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-MAINTAINER Webber Takken <webber@takken.io>
+LABEL maintainer="Webber Takken <webber@takken.io>"
 
 RUN apk add --update \
     php7-fpm \

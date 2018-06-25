@@ -1,3 +1,3 @@
 FROM mariadb:10.2
 
-MAINTAINER Webber Takken <webber@takken.io>
+LABEL maintainer="Webber Takken <webber@takken.io>"
