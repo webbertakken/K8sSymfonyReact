@@ -32,7 +32,7 @@ services:
         volumes:
             - ./logs/nginx/:/var/log/nginx:cached
     elk:
-        build: .k8s/images/dev/elk
+        build: .k8s/images/base/elk
         image: ibs-elk
         ports:
             - "81:80"
