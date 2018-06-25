@@ -1,7 +1,7 @@
 version: '2'
 services:
     db:
-        build: .k8s/images/dev/mariadb
+        build: .k8s/images/base/mariadb
         image: ibs-mariadb
         ports:
             - "3306:3306"
