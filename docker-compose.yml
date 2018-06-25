@@ -21,7 +21,7 @@ services:
         links:
             - db
     nginx:
-        build: .k8s/images/dev/nginx
+        build: .k8s/images/base/nginx
         image: ibs-nginx
         ports:
             - "80:80"
