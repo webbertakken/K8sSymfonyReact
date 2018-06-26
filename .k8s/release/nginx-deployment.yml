@@ -1,0 +1,52 @@
+# Stateless
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: itchybitchyspider
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+      tier: frontend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tier: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: eu.gcr.io/webber-takken/ibs-nginx
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+        lifecycle:
+          preStop:
+            exec:
+              command: ["/usr/sbin/nginx","-s","quit"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: loadbalancer
+  namespace: itchybitchyspider
+  labels:
+    app: nginx
+    tier: frontend
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+  - name: https
+    port: 443
+  selector:
+    app: nginx
+    tier: frontend

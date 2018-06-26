@@ -1,0 +1,33 @@
+version: '2'
+services:
+  mariadb:
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: symfony
+      MYSQL_USER: symfony
+      MYSQL_PASSWORD: symfony
+  php-fpm:
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./:/var/www/app:cached
+      - ./logs/symfony:/var/www/app/var/log:cached
+    links:
+      - mariadb
+  nginx:
+    ports:
+      - "80:80"
+    links:
+      - php-fpm
+    volumes_from:
+      - php-fpm
+    volumes:
+      - ./logs/nginx/:/var/log/nginx:cached
+  elk:
+    ports:
+      - "81:80"
+    volumes_from:
+      - php-fpm
+      - nginx

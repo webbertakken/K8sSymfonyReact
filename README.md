@@ -1,22 +1,74 @@
 # ItchyBitchySpider
 My personal website.
 
-## Usage
-Below an easy 6 steps to get the application up and running
+## Install
+##### Clone the repository
+```bash
+git clone git@github.com:webbertakken/ItchyBitchySpider
+cd ItchyBitchySpider
+```
 
-1. Clone the repo `git clone git@github.com:webbertakken/ItchyBitchySpider`
-2. Route `symfony.local` to `127.0.0.1` in your hosts file. 
-3. Navigate to the symfony folder `cd ItchyBitchySpider/symfony`
-4. Install dependencies `composer install && yarn && yarn run dev-server`
-5. Start the application `docker-compose up`
-6. Navigate to the following resources:
-    * [symfony.local](http://symfony.local/), to access the application;
-    * [symfony.local:81](http://symfony.local:81/), to access analytics;
-    * [symfony.local:3306](mysql://symfony.local) using a database administration tool, for database access.
+##### Install it's dependencies
+```bash
+composer install
+yarn install
+```
+
+## Develop
+##### Terminal 1:
+```bash
+yarn dev-server
+```
+
+##### Terminal 2:
+```bash
+docker-compose build && docker-compose up
+```
+Then visit [localhost](http://localhost) in your favorite browser.
+
+## Test
+##### Build assets
+```bash
+yarn build
+```
+
+##### Code style
+```bash
+yarn lint
+./vendor/bin/php-cs-fixer
+```
+
+##### Test
+```bash
+./vendor/bin/simple-phpunit
+```
+
+## Release
+##### Building the application
+```bash
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml build
+```
+
+##### Pushing the images
+```bash
+docker-compose -f docker-compose.prod.yml push
+```
+_(Requires docker to be configured for the container registry)_
+
+##### Rolling update
+```bash
+kubectl apply -f ./k8s/release/nginx-deployment.yml
+kubectl apply -f ./k8s/release/php-fpm-deployment.yml
+kubectl apply -f ./k8s/release/mariadb-depoloyment.yml
+kubectl apply -f ./k8s/release/redis-master-depoloyment.yml
+kubectl apply -f ./k8s/release/redis-slave-depoloyment.yml
+kubectl apply -f ./k8s/release/elk-depoloyment.yml
+```
+_(Requires a running Kubernetes cluster having `.k8s/infrastructure` set up)_
 
 ## Contributing
-If you're looking to fork, contribute or submit a correction; please read 
-[development.md](development.md) to go through a few quick steps to get you started!
+Looking to fork, contribute or submit a correction? Please read the [development](development.md) readme.
 
-## Copyright
-Copyright (c) Webber, MIT license.
+Made with ❤ by Webber.
+
+Open sourced under [MIT](./LICENSE) license.

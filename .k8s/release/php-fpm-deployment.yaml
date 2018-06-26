@@ -1,0 +1,44 @@
+# Stateless
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-fpm
+  namespace: itchybitchyspider
+spec:
+  selector:
+    matchLabels:
+      app: php-fpm
+      tier: backend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: php-fpm
+        tier: backend
+    spec:
+      containers:
+      - name: ibs-php
+        image: eu.gcr.io/webber-takken/ibs-php-fpm
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 9000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-fpm
+  namespace: itchybitchyspider
+  labels:
+    app: php-fpm
+    tier: backend
+spec:
+  ports:
+  - port: 9000
+    targetPort: 9000
+  selector:
+    app: php-fpm
+    tier: backend

@@ -1,0 +1,14 @@
+version: '2'
+services:
+    prod-mariadb:
+        build: .k8s/images/base/mariadb
+        image: eu.gcr.io/webber-takken/ibs-mariadb
+    prod-php-fpm:
+        build: .k8s/images/prod/php-fpm
+        image: eu.gcr.io/webber-takken/ibs-php-fpm
+    prod-nginx:
+        build: .k8s/images/prod/nginx
+        image: eu.gcr.io/webber-takken/ibs-nginx
+    prod-elk:
+        build: .k8s/images/base/elk
+        image: eu.gcr.io/webber-takken/ibs-elk
