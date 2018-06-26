@@ -71,4 +71,4 @@ Looking to fork, contribute or submit a correction? Please read the [development
 
 Made with ❤ by Webber.
 
-Open sourced under [MIT](./LIN) license.
+Open sourced under [MIT](./LICENSE) license.
