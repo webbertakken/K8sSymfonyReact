@@ -2,10 +2,14 @@
 My personal website.
 
 ## Install
-##### Clone the repository and install it's dependencies
+##### Clone the repository
 ```bash
 git clone git@github.com:webbertakken/ItchyBitchySpider
 cd ItchyBitchySpider
+```
+
+##### Install it's dependencies
+```bash
 composer install
 yarn install
 ```
