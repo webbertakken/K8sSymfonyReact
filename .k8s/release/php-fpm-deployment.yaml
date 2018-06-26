@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: ibs-php
-        image: eu.gcr.io/webber-takken/ibs-php
+        image: eu.gcr.io/webber-takken/ibs-php-fpm
         resources:
           requests:
             cpu: 100m
@@ -30,7 +30,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: php
+  name: php-fpm
   namespace: itchybitchyspider
   labels:
     app: php-fpm

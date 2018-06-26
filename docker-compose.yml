@@ -1,14 +1,14 @@
 version: '2'
 services:
-  db:
+  mariadb:
     build: .k8s/images/base/mariadb
-    image: ibs-mariadb
-  php:
+    image: base-mariadb
+  php-fpm:
     build: .k8s/images/base/php-fpm
-    image: ibs-php
+    image: base-php-fpm
   nginx:
     build: .k8s/images/base/nginx
-    image: ibs-nginx
+    image: base-nginx
   elk:
     build: .k8s/images/base/elk
-    image: ibs-elk
+    image: base-elk
