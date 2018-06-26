@@ -19,6 +19,7 @@ or alternatively [VS Code](https://code.visualstudio.com/), for which you'd have
     - yarn
     - docker
     - docker-compose
+    - &lt;cloud provider&gt;-cli
 
 * Install the following plugins
 
@@ -115,6 +116,8 @@ test the quality of the additions.
 
 #### Deploying
 Read [ansible/README.md](ansible/README.md) to find out how to deploy the application.
+
+___Note:__ This deployment method is deprecated in favor of Kubernetes, see [README.md](./README.md)._
 
 ## Optimising
 #### Assets
