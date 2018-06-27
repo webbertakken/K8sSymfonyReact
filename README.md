@@ -46,7 +46,9 @@ yarn lint
 ## Release
 ##### Building the application
 ```bash
-docker-compose -f docker-compose.yml -f docker-compose.prod.yml build
+docker-compose -f docker-compose.yml build
+yarn copy-dist
+docker-compose -f docker-compose.prod.yml build
 ```
 
 ##### Pushing the images

@@ -11,6 +11,7 @@
     "bootstrap": "4.0.0-beta.3",
     "chart.js": "^2.7.2",
     "classnames": "^2.2.5",
+    "cpx": "^1.5.0",
     "flag-icon-css": "^3.0.0",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
@@ -28,6 +29,7 @@
     "react-scripts": "^1.1.4",
     "react-transition-group": "^2.3.0",
     "reactstrap": "^5.0.0",
+    "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
     "simple-line-icons": "^2.4.1",
     "webpack-notifier": "^1.5.1"
@@ -51,6 +53,7 @@
     "build": "encore production",
     "lint": "yarn run sass-lint && yarn run eslint",
     "eslint": "eslint \"assets/**/*.js*\"",
-    "sass-lint": "sass-lint \"assets/**/*.scss\" -v -q"
+    "sass-lint": "sass-lint \"assets/**/*.scss\" -v -q",
+    "copy-dist": "rimraf \".k8s/images/prod/*/dist\" && cpx \"{./*,./!(node_modules|vendor)/**}\" \".k8s/images/prod/php-fpm/dist\" --include-empty-dirs && cpx \"./public/**\" \".k8s/images/prod/nginx/dist/public\" --include-empty-dirs"
   }
 }

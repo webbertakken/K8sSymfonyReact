@@ -4,6 +4,7 @@ yarn-error.log
 
 # Docker
 /logs/
+/.k8s/images/prod/*/dist/
 
 
 ###> symfony/framework-bundle ###
