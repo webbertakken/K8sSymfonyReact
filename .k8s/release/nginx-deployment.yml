@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: eu.gcr.io/webber-takken/ibs-nginx:latest
+          image: eu.gcr.io/webber-takken/ibs-nginx
           resources:
             requests:
               cpu: 100m

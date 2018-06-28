@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: ibs-php
-          image: eu.gcr.io/webber-takken/ibs-php-fpm:latest
+          image: eu.gcr.io/webber-takken/ibs-php-fpm
           resources:
             requests:
               cpu: 100m
@@ -37,8 +37,12 @@ metadata:
     tier: backend
 spec:
   ports:
-    - port: 9000
+    - name: php
+      port: 9000
       targetPort: 9000
+    - name: fast-cgi-listener
+      port: 9001
+      targetPort: 9001
   selector:
     app: php-fpm
     tier: backend
