@@ -26,7 +26,9 @@ spec:
             memory: 50Mi
         ports:
           - containerPort: 80
-          - containerPort: 443
+        livenessProbe:
+          tcpSocket:
+            port: 80
         lifecycle:
           preStop:
             exec:
@@ -41,12 +43,12 @@ metadata:
     app: nginx
     tier: frontend
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - name: http
     port: 80
-  - name: https
-    port: 443
+    targetPort: 80
+    protocol: TCP
   selector:
     app: nginx
     tier: frontend
