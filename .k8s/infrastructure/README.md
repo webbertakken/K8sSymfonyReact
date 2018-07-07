@@ -6,7 +6,7 @@ Change the namespaces.yml file to reflect the desired namespace.
 
 Install the namespace
 ```bash
-kubectl apply -f namespaces.yml
+kubectl apply -f ./namespaces.yml
 ```
 
 Switch the context to that namespace within kubectl.
@@ -31,3 +31,9 @@ kubectl create secret generic mysql-pass --from-literal=password=<SomeSecurePass
 $ kubectl create secret tls spider-wtf-certificate --namespace=itchybitchyspider
 ```
 
+## Ingress
+Install the ingress resource for this application
+
+```bash
+$ kubectl apply -f ./ingress.yml
+```
