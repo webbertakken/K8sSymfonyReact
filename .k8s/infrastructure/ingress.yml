@@ -5,9 +5,18 @@ metadata:
   namespace: itchybitchyspider
   annotations:
     kubernetes.io/ingress.class: nginx
+    # Always use https
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    # Select ClusterIssuer
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    # Reuse same http01 challenge solver
+    certmanager.k8s.io/acme-http01-edit-in-place: "true"
 spec:
+  backend:
+    serviceName: nginx
+    servicePort: 80
   rules:
-    - host: www.spider.wtf
+    - host: spider.wtf
       http:
         paths:
           - backend:
@@ -17,5 +26,5 @@ spec:
   # This section is only required if TLS is to be enabled for the Ingress
   tls:
     - hosts:
-        - www.spider.wtf
+        - spider.wtf
       secretName: spider-wtf-certificate

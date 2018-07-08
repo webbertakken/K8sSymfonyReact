@@ -26,14 +26,24 @@ password=`<mysql root password>`
 kubectl create secret generic mysql-pass --from-literal=password=<SomeSecurePassword> --namespace=itchybitchyspider
 ```
 
-#### TLS Certificate
-```bash
-$ kubectl create secret tls spider-wtf-certificate --namespace=itchybitchyspider
-```
-
 ## Ingress
-Install the ingress resource for this application
+Install the ingress resource for this application.
 
 ```bash
 $ kubectl apply -f ./ingress.yml
 ```
+
+It will create a Certificate resource which in turn will create TLS secret.
+
+Check if the certificate was created:
+```bash
+$ kubectl describe ingress ingress
+```
+It should show `Successfully created Certificate "spider-wtf-certificate"` as the last event.
+
+Check if the certificate created the order, and whether it has been validated yet:
+```bash
+$ kubectl describe certificate spider-wtf-certificate
+```
+
+
