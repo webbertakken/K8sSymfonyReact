@@ -9,6 +9,8 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     # Select ClusterIssuer
     certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    # Challenger type
+    certmanager.k8s.io/acme-challenge-type: http01
     # Reuse same http01 challenge solver
     certmanager.k8s.io/acme-http01-edit-in-place: "true"
 spec:
@@ -23,8 +25,16 @@ spec:
               serviceName: nginx
               servicePort: 80
             path: /
+    - host: www.spider.wtf
+      http:
+        paths:
+          - backend:
+              serviceName: nginx
+              servicePort: 80
+            path: /
   # This section is only required if TLS is to be enabled for the Ingress
   tls:
     - hosts:
         - spider.wtf
+        - www.spider.wtf
       secretName: spider-wtf-certificate
