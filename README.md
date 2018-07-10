@@ -1,5 +1,15 @@
-# ItchyBitchySpider
-My personal website.
+<h3 align="center">K8sSymfonyReact</h3>
+
+<p align="center">
+  <a href="#">
+    <img src="./resources/stack.png" width="890" />
+  </a>
+</p>
+
+<p align="center">
+  K8sSymfonyReact is ready-to-go boilerplate for a scalable Symfony application with a React frontend.<br />
+  <img class="badge-img clickable" src="https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000" alt="">
+</p>
 
 ## Install
 ##### Clone the repository
