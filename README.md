@@ -1,5 +1,5 @@
 <h3 align="center">K8sSymfonyReact</h3>
-
+<br />
 <p align="center">
   <a href="#">
     <img src="./resources/stack.png" width="890" />
@@ -8,7 +8,8 @@
 
 <p align="center">
   K8sSymfonyReact is ready-to-go boilerplate for a scalable Symfony application with a React frontend.<br />
-  <img class="badge-img clickable" src="https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000" alt="">
+  <br />
+  <a href="./LICENSE"><img class="badge-img clickable" src="https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000" alt=""></a>
 </p>
 
 ## Install
