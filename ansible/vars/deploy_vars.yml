@@ -1,8 +1,0 @@
----
-symfony_secret: "{{ vault_symfony_secret }}"
-db_protocol: mysql
-db_host: "{{ vault_database_host }}"
-db_port: 3306
-db_name: "{{ vault_database_name }}"
-db_user: "{{ vault_database_user }}"
-db_pass: "{{ vault_database_pass }}"

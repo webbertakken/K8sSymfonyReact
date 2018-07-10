@@ -1,4 +1,0 @@
----
-project_deploy_dir: "{{ machine_deploy_dir|default('/var/www/spider.wtf') }}"
-ansistrano_current_dir: current
-server_document_root: "{{ project_deploy_dir }}/{{ ansistrano_current_dir }}/public"
