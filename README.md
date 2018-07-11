@@ -59,7 +59,8 @@ _The recommended way to do this is to authenticate the a builder-system to the
 container-registry of your cloud project._
 
 ## Release
-Perform a rolling update to your production environment.
+Perform a rolling update to your production or staging,
+depending on current kubectl context (cluster and namespace).
 ```bash
 yarn release
 ```
