@@ -13,6 +13,12 @@
   <img src="https://img.shields.io/badge/contributions-welcome-green.svg">
 </p>
 
+## Prerequisites
+- Node.js
+- Yarn
+- Composer
+- Docker and Compose
+
 ## Install
 Install composer and npm packages using:
 ```bash
