@@ -14,6 +14,7 @@
 </p>
 
 ## Install
+Install composer and npm packages using:
 ```bash
 yarn
 ```
@@ -38,18 +39,19 @@ yarn lint
 ```
 
 ## Test
-Test your application
+Test your application:
 ```bash
 yarn test
 ```
 
 ## Build
-Build your application for production
+Build your application for production:
 ```bash
 yarn build
 ```
 
 ## Push
+Push the build to your container registry:
 ```bash
 yarn push
 ```
@@ -60,7 +62,7 @@ container-registry of your cloud project._
 
 ## Release
 Perform a rolling update to your production or staging,
-depending on current kubectl context (cluster and namespace).
+depending on current kubectl context (cluster and namespace):
 ```bash
 yarn release
 ```
