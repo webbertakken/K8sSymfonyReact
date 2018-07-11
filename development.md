@@ -1,5 +1,5 @@
 # Development
-This is the development section. For information on the project, see [README.md](README.md). 
+This is the development section. For information on the project, see [README.md](README.md).
 Below information will guide you through developing and contributing to the project.
 
 ## Prerequisites
@@ -32,14 +32,15 @@ or alternatively [VS Code](https://code.visualstudio.com/), for which you'd have
     - ESLint
     - SassLint
     - EditorConfig
+    - Markdown Navigator
 
 * Optional colors and styles that work well with this project
 
     - Colors from my [PHPStormSettings](https://github.com/webbertakken/PHPStormSettings/tree/master/colors) repository
     - [Material Theme](https://github.com/ChrisRM/material-theme-jetbrains) UI Plugin
 
-__Note:__ The rest of all documentation assumes the prerequisites are met.  
-__Note:__ When using Docker Toolbox on Windows, make sure to disable experimental features, 
+__Note:__ The rest of all documentation assumes the prerequisites are met.
+__Note:__ When using Docker Toolbox on Windows, make sure to disable experimental features,
 because of this [issue](https://github.com/docker/for-win/issues/573#issuecomment-288940904).
 
 ## Getting started
@@ -90,24 +91,24 @@ Go to `Settings` > `Other Settings`.
 
 ### Linting
 * To check if all javascript files are OK, run ESLint:
-```
+```bash
 $ yarn run eslint
 ```
 
 * To check if all sass files are OK, run sass-lint:
-```
+```bash
 $ yarn run sass-lint
 ```
 
 * To run all linters at once (useful before committing) run the following command:
-```
+```bash
 $ yarn run lint
 ```
 
 ## Testing & Deploying
 #### Testing
 Run PhpUnit
-```
+```bash
 $ php bin/phpunit
 ```
 #### Building
@@ -127,33 +128,34 @@ send long-lived expires-headers for all asset files to have browsers cache them 
 ## Troubleshooting
 ### Update software
 ##### Updating NodeJs
-To update NodeJs see 
+To update NodeJs see
 [StackOverflow: updating NodeJs](https://stackoverflow.com/questions/8191459/how-do-i-update-node-js).
 
 ##### Updating composer
 To update composer, run the following command:
-```
+```bash
 $ composer self-update
 ```
 
-##### Updating npm 
+##### Updating npm
 To update npm, run the following command:
-```
+```bash
 $ npm install --global npm
 ```
 
 ##### Updating yarn
 To update yarn, run the following command:
-```
+```bash
 $ npm install --global yarn
 ```
 
-### Unlock built assets 
-Sometimes it may happen that switching between different asset generation methods, 
-blocks the files from being manipulated. Run the following commands:
-```
+### Unlock built assets
+Sometimes it may happen that switching between different asset generation methods
+blocks built files from being manipulated. When this happens, run the following
+commands:
+```bash
 $ docker-compose down
-$ rm -rf ./public/application/* 
+$ rm -rf ./public/application/*
 $ docker-compose up
 $ yarn run dev-server
 ```

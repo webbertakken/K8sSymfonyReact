@@ -66,3 +66,10 @@ _Requires a running Kubernetes cluster having `.k8s/infrastructure` set up._
 
 _Additionally you need to have a context configured for kubectl,
 that reflects the cluster and the desired namespace for this build._
+
+## Troubleshooting
+When experiencing unexpected problems, refer to the
+[troubleshooting](development.md#troubleshooting)
+section to update the requirements.
+
+If that doesn't work; please create an issue.
