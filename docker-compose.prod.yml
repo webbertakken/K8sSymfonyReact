@@ -2,13 +2,13 @@ version: '2'
 services:
   mariadb-prod:
     build: .k8s/images/base/mariadb
-    image: eu.gcr.io/webber-takken/ibs-mariadb
+    image: <your-container-registry>/mariadb
   php-fpm-prod:
     build: .k8s/images/prod/php-fpm
-    image: eu.gcr.io/webber-takken/ibs-php-fpm
+    image: <your-container-registry>/php-fpm
   nginx-prod:
     build: .k8s/images/prod/nginx
-    image: eu.gcr.io/webber-takken/ibs-nginx
+    image: <your-container-registry>/nginx
   elk-prod:
     build: .k8s/images/base/elk
-    image: eu.gcr.io/webber-takken/ibs-elk
+    image: <your-container-registry>/elk

@@ -37,13 +37,13 @@ class DemoHeader extends Component {
             src: '/static/images/brand/logo.svg',
             height: 40,
             width: 'auto',
-            alt: 'ItchyBitchySpider Logo',
+            alt: 'Logo',
           }}
           minimized={{
             src: '/static/images/brand/logo-symbol.svg',
             height: 40,
             width: 40,
-            alt: 'ItchyBitchySpider Symbol',
+            alt: 'Symbol',
           }}
         />
         <AppSidebarToggler className="d-md-down-none" display="lg" />

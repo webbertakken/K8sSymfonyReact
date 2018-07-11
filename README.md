@@ -14,6 +14,7 @@
 </p>
 
 ## Prerequisites
+The following tools should be available from your command line
 - Node.js
 - Yarn
 - Composer
@@ -72,7 +73,8 @@ depending on current kubectl context (cluster and namespace):
 ```bash
 yarn release
 ```
-_Requires a running Kubernetes cluster having `.k8s/infrastructure` set up._
+_Requires a running Kubernetes cluster having the projects
+[infrastructure](.k8s/infrastructure/README.md) set up._
 
 _Additionally you need to have a context configured for kubectl,
 that reflects the cluster and the desired namespace for this build._

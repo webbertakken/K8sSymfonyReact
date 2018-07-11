@@ -4,7 +4,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: php-fpm
-  namespace: itchybitchyspider
 spec:
   selector:
     matchLabels:
@@ -18,8 +17,8 @@ spec:
         tier: backend
     spec:
       containers:
-      - name: ibs-php
-        image: eu.gcr.io/webber-takken/ibs-php-fpm
+      - name: php
+        image: <your-container-registry>/php-fpm
         resources:
           requests:
             cpu: 50m
@@ -31,7 +30,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: php-fpm
-  namespace: itchybitchyspider
   labels:
     app: php-fpm
     tier: backend

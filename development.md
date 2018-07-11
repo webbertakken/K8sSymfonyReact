@@ -44,10 +44,6 @@ __Note:__ When using Docker Toolbox on Windows, make sure to disable experimenta
 because of this [issue](https://github.com/docker/for-win/issues/573#issuecomment-288940904).
 
 ## Getting started
-### Grab the project
-1. Clone the repo `git clone git@github.com:webbertakken/ItchyBitchySpider`.
-2. Install back-end packages, running `composer install`.
-3. Install front-end packages, running `yarn`.
 
 ### Project settings
 Go to `Settings` > `Editor` > `Code Style`.
