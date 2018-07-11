@@ -9,7 +9,8 @@
 <p align="center">
   K8sSymfonyReact is ready-to-go boilerplate for a scalable Symfony application with a React frontend.<br />
   <br />
-  <a href="./LICENSE"><img class="badge-img clickable" src="https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000" alt=""></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000" alt=""></a>
+  <img src="https://img.shields.io/badge/contributions-welcome-green.svg">
 </p>
 
 ## Install
