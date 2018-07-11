@@ -14,11 +14,12 @@
 </p>
 
 ## Prerequisites
-The following tools should be available from your command line
-- Node.js
-- Yarn
-- Composer
-- Docker and Compose
+The following tools should be available from your command line:
+
+- [Node.js](https://nodejs.org)
+- [Yarn](https://yarnpkg.com)
+- [Composer](https://getcomposer.org)
+- [Docker](https://www.docker.com/get-docker) and [Compose](https://docs.docker.com/compose/)
 
 ## Install
 Install composer and npm packages using:
@@ -62,9 +63,9 @@ Push the build to your container registry:
 ```bash
 yarn push
 ```
-_Requirements: docker to be configured for the container registry._
+_Requires docker to be configured for the container registry ([example for Google Cloud](https://github.com/webbertakken/PracticalNotes/blob/master/Cloud/Google/K8sContainerRegistry.md))._
 
-_The recommended way to do this is to authenticate the a builder-system to the
+_The recommended way to do this is to authenticate a builder-system to the
 container-registry of your cloud project._
 
 ## Release
