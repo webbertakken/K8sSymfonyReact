@@ -13,49 +13,38 @@
 </p>
 
 ## Install
-##### Clone the repository
 ```bash
-git clone git@github.com:webbertakken/ItchyBitchySpider
-cd ItchyBitchySpider
-```
-
-##### Install it's dependencies
-```bash
-composer install
-yarn install
+yarn
 ```
 
 ## Develop
 ##### Terminal 1:
+Build and run the application, watch container logs:
+```bash
+docker-compose build && docker-compose up
+```
+
+##### Terminal 2:
+Generate assets, open a browser with hot-reload and watch for any changes:
 ```bash
 yarn dev-server
 ```
 
-##### Terminal 2:
-```bash
-docker-compose build && docker-compose up
-```
-Then visit [localhost](http://localhost) in your favorite browser.
-
-## Test
-##### Build assets
-```bash
-yarn build
-```
-
-##### Code style
+## Lint
+Check code styles using linters:
 ```bash
 yarn lint
-./vendor/bin/php-cs-fixer
 ```
 
-##### Test
+## Test
+Test your application
 ```bash
-./vendor/bin/simple-phpunit
+yarn test
 ```
 
 ## Release
 ##### Building the application
+Build docker containers without
 ```bash
 docker-compose -f docker-compose.yml build
 yarn copy-dist

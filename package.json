@@ -47,6 +47,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "preinstall": "composer install",
+    "test": "yarn && yarn build && vendor/bin/simple-phpunit",
     "dev-server": "encore dev-server --hot",
     "dev": "encore dev",
     "watch": "encore dev --watch",
