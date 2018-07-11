@@ -48,14 +48,16 @@
   "private": true,
   "scripts": {
     "preinstall": "composer install",
-    "test": "yarn && yarn build && vendor/bin/simple-phpunit",
     "dev-server": "encore dev-server --hot",
-    "dev": "encore dev",
-    "watch": "encore dev --watch",
-    "build": "encore production",
     "lint": "yarn run sass-lint && yarn run eslint",
+    "test": "yarn && yarn build-assets && vendor/bin/simple-phpunit",
+    "build": "yarn && yarn build-assets && yarn copy-dist && yarn build-docker-prod",
+    "push": "docker-compose -f docker-compose.prod.yml push",
+    "release": "kubectl apply -f .k8s/release/nginx-deployment.yml -f .k8s/release/php-fpm-deployment.yml -f .k8s/release/mariadb-deployment.yml -f .k8s/release/redis-master-deployment.yml -f .k8s/release/redis-slave-deployment.yml -f .k8s/release/elk-deployment.yml",
+    "build-assets": "encore production",
+    "build-docker-prod": "docker-compose -f docker-compose.yml build && docker-compose -f docker-compose.prod.yml build",
+    "copy-dist": "rimraf \".k8s/images/prod/*/dist\" && cpx \"{./*,./!(node_modules|vendor)/**}\" \".k8s/images/prod/php-fpm/dist\" --include-empty-dirs && cpx \"./public/**\" \".k8s/images/prod/nginx/dist/public\" --include-empty-dirs",
     "eslint": "eslint \"assets/**/*.js*\"",
-    "sass-lint": "sass-lint \"assets/**/*.scss\" -v -q",
-    "copy-dist": "rimraf \".k8s/images/prod/*/dist\" && cpx \"{./*,./!(node_modules|vendor)/**}\" \".k8s/images/prod/php-fpm/dist\" --include-empty-dirs && cpx \"./public/**\" \".k8s/images/prod/nginx/dist/public\" --include-empty-dirs"
+    "sass-lint": "sass-lint \"assets/**/*.scss\" -v -q"
   }
 }

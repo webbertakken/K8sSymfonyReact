@@ -19,13 +19,13 @@ yarn
 
 ## Develop
 ##### Terminal 1:
-Build and run the application, watch container logs:
+Build and run your application, watching container logs:
 ```bash
 docker-compose build && docker-compose up
 ```
 
 ##### Terminal 2:
-Generate assets, open a browser with hot-reload and watch for any changes:
+Build your assets, open the browser with hot-reload, watching for any changes:
 ```bash
 yarn dev-server
 ```
@@ -42,35 +42,27 @@ Test your application
 yarn test
 ```
 
+## Build
+Build your application for production
+```bash
+yarn build
+```
+
+## Push
+```bash
+yarn push
+```
+_Requirements: docker to be configured for the container registry._
+
+_The recommended way to do this is to authenticate the a builder-system to the
+container-registry of your cloud project._
+
 ## Release
-##### Building the application
-Build docker containers without
+Perform a rolling update to your production environment.
 ```bash
-docker-compose -f docker-compose.yml build
-yarn copy-dist
-docker-compose -f docker-compose.prod.yml build
+yarn release
 ```
+_Requires a running Kubernetes cluster having `.k8s/infrastructure` set up._
 
-##### Pushing the images
-```bash
-docker-compose -f docker-compose.prod.yml push
-```
-_(Requires docker to be configured for the container registry)_
-
-##### Rolling update
-```bash
-kubectl apply -f ./k8s/release/nginx-deployment.yml
-kubectl apply -f ./k8s/release/php-fpm-deployment.yml
-kubectl apply -f ./k8s/release/mariadb-depoloyment.yml
-kubectl apply -f ./k8s/release/redis-master-depoloyment.yml
-kubectl apply -f ./k8s/release/redis-slave-depoloyment.yml
-kubectl apply -f ./k8s/release/elk-depoloyment.yml
-```
-_(Requires a running Kubernetes cluster having `.k8s/infrastructure` set up)_
-
-## Contributing
-Looking to fork, contribute or submit a correction? Please read the [development](development.md) readme.
-
-Made with ❤ by Webber.
-
-Open sourced under [MIT](./LICENSE) license.
+_Additionally you need to have a context configured for kubectl,
+that reflects the cluster and the desired namespace for this build._
