@@ -79,47 +79,11 @@ Go to `Settings` > `Other Settings`.
 
 ### Starting the application
 1. Start application using `docker-compose up`
-2. Start the asset dev-server running `yarn run dev-server`, for live reloading scss and jsx
+2. Start the asset dev-server running `yarn dev-server`
 
 ### Stopping the application
 1. End the asset dev-server using ctrl-c
 2. Stop the application running `docker-compose down`
-
-### Linting
-* To check if all javascript files are OK, run ESLint:
-```bash
-$ yarn run eslint
-```
-
-* To check if all sass files are OK, run sass-lint:
-```bash
-$ yarn run sass-lint
-```
-
-* To run all linters at once (useful before committing) run the following command:
-```bash
-$ yarn run lint
-```
-
-## Testing & Deploying
-#### Testing
-Run PhpUnit
-```bash
-$ php bin/phpunit
-```
-#### Building
-After each pushed commit on any branch, an automatic build will be generated to
-test the quality of the additions.
-
-#### Deploying
-Read [ansible/README.md](ansible/README.md) to find out how to deploy the application.
-
-___Note:__ This deployment method is deprecated in favor of Kubernetes, see [README.md](./README.md)._
-
-## Optimising
-#### Assets
-Since versioning is applied to all asset files; Apache/Nginx can be configured to
-send long-lived expires-headers for all asset files to have browsers cache them indefinitely.
 
 ## Troubleshooting
 ### Update software
