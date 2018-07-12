@@ -1,21 +1,9 @@
-// Keyframes
-@keyframes background700RightToLeft {
-  from { background-position: right -800px top }
-  to { background-position: left -800px top }
-}
-
-// Styles
 .maintenance-page {
   width: 100%;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  // Background
-  background: url('images/spider.wtf.png') no-repeat 50% 0;
-  will-change: background-position;
-  animation: background700RightToLeft 30s linear infinite;
 
   .message-block {
     display: flex;
@@ -67,9 +55,6 @@
 
 @include media-breakpoint-down(xs) {
   .maintenance-page {
-    animation: none;
-    background-size: contain;
-
     .message-block .message {
       padding: 0 0 0 12px;
 

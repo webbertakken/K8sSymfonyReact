@@ -6,7 +6,6 @@ import 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
 // Frontend frameworks
-import $ from 'jquery';
 import 'bootstrap';
 
 // Services
@@ -34,7 +33,7 @@ window.addEventListener('load', () => {
       import('autotrack/lib/plugins/url-change-tracker'),
     ])
     .then(() => {
-      GoogleAnalytics.initialize('UA-77602014-1');
+      GoogleAnalytics.initialize('UA-########-#');
 
       GoogleAnalytics.plugin.require('cleanUrlTracker');
       GoogleAnalytics.plugin.require('eventTracker');
@@ -49,22 +48,4 @@ window.addEventListener('load', () => {
 
       GoogleAnalytics.pageview(window.location.pathname + window.location.search);
     });
-});
-/* eslint-enable no-unused-vars, no-undef */
-
-// Temporarily add script directly
-$(document).ready(() => {
-  $('.js-like-article').on('click', (e) => {
-    e.preventDefault();
-
-    const $link = $(e.currentTarget);
-    $link.toggleClass('fa-heart-o').toggleClass('fa-heart');
-
-    $.ajax({
-      method: 'POST',
-      url: $link.attr('href'),
-    }).done((data) => {
-      $('.js-like-article-count').html(data.hearts);
-    });
-  });
 });
