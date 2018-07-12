@@ -48,6 +48,7 @@
   "private": true,
   "scripts": {
     "preinstall": "composer install",
+    "up": "docker-compose build && docker-compose up",
     "dev-server": "encore dev-server --hot",
     "lint": "yarn run sass-lint && yarn run eslint",
     "test": "yarn && yarn build-assets && vendor/bin/simple-phpunit",

@@ -31,7 +31,7 @@ yarn
 ##### Terminal 1:
 Build and run your application, watching container logs:
 ```bash
-docker-compose build && docker-compose up
+yarn up
 ```
 
 ##### Terminal 2:
