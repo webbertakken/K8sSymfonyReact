@@ -1,0 +1,17 @@
+{% extends 'html_base.html.twig' %}
+
+{% block content %}
+  <ul class="demo-card">
+    <h3>Libraries working demos</h3>
+    <li>
+      <a href="{{ path('demo_scene', { 'demoScene': 'coreui' }) }}">
+        CoreUI (React)
+      </a>
+    </li>
+    <li>
+      <a href="{{ path('demo_scene', { 'demoScene': 'materialize' }) }}">
+        Materialize (React)
+      </a>
+    </li>
+  </ul>
+{% endblock %}

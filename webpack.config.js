@@ -18,7 +18,8 @@
 const Encore = require('@symfony/webpack-encore');
 
 Encore
-// The project directory where compiled assets will be stored
+
+  // The project directory where compiled assets will be stored
   .setOutputPath('public')
 
   // The public path used by the web server to access the previous directory
@@ -42,7 +43,7 @@ Encore
 
   // Scene entries
   .addEntry('scenes/maintenance', './assets/scenes/Maintenance')
-  .addEntry('scenes/demo', './assets/scenes/Demo/CoreUI')
+  .addEntry('scenes/demo/coreui', './assets/scenes/Demo/CoreUI')
 
   // Use Sass/SCSS files (node-sass, sass-loader)
   .enableSassLoader()

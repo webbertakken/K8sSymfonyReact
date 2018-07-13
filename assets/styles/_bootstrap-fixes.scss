@@ -9,3 +9,8 @@
     width: auto;
   }
 }
+
+// Symfony Debug-toolbar svg mis-alignment after bootstrap reset
+.sf-toolbar-block .sf-toolbar-icon svg {
+  vertical-align: initial;
+}
