@@ -10,12 +10,12 @@ import 'simple-line-icons/css/simple-line-icons.css';
 // Import Main styles for this application
 import '@coreui/coreui/scss/coreui.scss';
 // Layouts
-import Layout from '../../components/Layouts/components/FrameLayout';
+import Layout from '../../../components/Layouts/components/FrameLayout/index';
 // Containers
 import Demo from './partials/Demo';
 // Services
-import registerServiceWorker from '../../services/worker/registerServiceWorker';
-import withTracker from '../../services/analytics/withTracker';
+import registerServiceWorker from '../../../services/worker/registerServiceWorker';
+import withTracker from '../../../services/analytics/withTracker';
 // Views
 import Login from './components/Pages/Login/Login';
 import Register from './components/Pages/Register/Register';

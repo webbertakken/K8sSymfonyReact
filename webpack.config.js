@@ -42,7 +42,7 @@ Encore
 
   // Scene entries
   .addEntry('scenes/maintenance', './assets/scenes/Maintenance')
-  .addEntry('scenes/demo', './assets/scenes/Demo')
+  .addEntry('scenes/demo', './assets/scenes/Demo/CoreUI')
 
   // Use Sass/SCSS files (node-sass, sass-loader)
   .enableSassLoader()

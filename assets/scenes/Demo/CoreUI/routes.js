@@ -1,5 +1,5 @@
 // Services
-import withTracker from '../../services/analytics/withTracker';
+import withTracker from '../../../services/analytics/withTracker';
 
 // Components
 import Dashboard from './components/Dashboard/Dashboard';
