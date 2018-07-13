@@ -2,24 +2,19 @@
 
 namespace App\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+/**
+ * Class AppController.
+ */
 class AppController extends AbstractController
 {
     /**
-     * @Route("/dashboard/demo")
+     * @Route("/demo/coreui")
      */
     public function demo()
     {
         return $this->render('demo/show.html.twig');
-    }
-
-    /**
-     * @Route("/dashboard")
-     */
-    public function dashboard()
-    {
-        return $this->render('dashboard/show.html.twig');
     }
 }
