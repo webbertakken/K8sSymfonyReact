@@ -5,9 +5,6 @@ import 'react';
 import 'react-dom';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
-// Frontend frameworks
-import 'bootstrap';
-
 // Services
 import './services/analytics/withTracker';
 

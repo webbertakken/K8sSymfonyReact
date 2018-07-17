@@ -1,7 +1,26 @@
-// Import styles
+@charset "UTF-8";
 
+//
+// Variables
+//
+@import "../../../styles/app-variables";
+@import "styles/bootstrap-and-coreui-variables";
 
+//
+// Main styles
+//
+@import "~bootstrap/scss/bootstrap";
+@import "~@coreui/coreui/scss/coreui";
 
-// Override Boostrap variables
+//
+// Standalone Libraries
+//
+@import '~flag-icon-css/sass/flag-icon';
+@import "~font-awesome/scss/font-awesome";
+@import '~simple-line-icons/scss/simple-line-icons';
 
-
+//
+// Fixes
+//
+@import "styles/bootstrap-fixes";
+@import "styles/coreui-fixes";

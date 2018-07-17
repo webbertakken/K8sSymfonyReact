@@ -1,3 +1,7 @@
+body {
+  background-color: #f9f6f0;
+}
+
 .maintenance-page {
   width: 100%;
   min-height: 100vh;
@@ -26,44 +30,6 @@
 
       .subtitle {
         color: #222222;
-      }
-    }
-  }
-}
-
-// Breakpoints
-@include media-breakpoint-down(sm) {
-  .maintenance-page .message-block {
-    .logo {
-      width: 10vw;
-      height: 10vw;
-      min-width: 32px;
-      min-height: 32px;
-    }
-
-    .message {
-      .title {
-        font-size: 5vw;
-      }
-
-      .subtitle {
-        font-size: 2vw;
-      }
-    }
-  }
-}
-
-@include media-breakpoint-down(xs) {
-  .maintenance-page {
-    .message-block .message {
-      padding: 0 0 0 12px;
-
-      .title {
-        margin-bottom: 0;
-      }
-
-      .subtitle {
-        display: none;
       }
     }
   }

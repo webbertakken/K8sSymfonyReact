@@ -2,8 +2,20 @@
   display: table;
   padding: 20px;
   margin: 50px auto;
-  background-color: #fff;
+  background-color: #fde0c4;
   border-radius: 4px;
-  box-shadow: 1px 2px 2px 0 rgba(0,0,0,0.2);
+  box-shadow: 1px 2px 2px 0 rgba(0,0,0,.33);
   list-style-position: inside;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #fd5214;
+    margin-top: 0;
+  }
+
+  a {
+    color: #fd5214;
+    line-height: 1.5em;
+  }
 }

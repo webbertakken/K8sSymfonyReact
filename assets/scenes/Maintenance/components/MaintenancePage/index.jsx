@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styles.scss';
+
 import barbecue from './icons/barbeque-flat.svg';
 
 const MaintenancePage = () => (
