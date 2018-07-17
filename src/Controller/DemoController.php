@@ -15,8 +15,8 @@ class DemoController extends AbstractController
      */
     public function scene(string $demoScene)
     {
-        return $this->render('demo/scene.html.twig', [
-            'demoScene' => $demoScene
+        return $this->render('scene.html.twig', [
+            'scene' => 'demo/' . $demoScene
         ]);
     }
 }

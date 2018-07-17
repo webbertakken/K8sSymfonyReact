@@ -1,0 +1,11 @@
+{% extends 'react_base.html.twig' %}
+
+{% set scene = scene|default('404') %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{ asset('scenes/' ~ scene ~ '.css') }}" type="text/css" />
+{% endblock %}
+
+{% block application %}
+  <script src="{{ asset('scenes/' ~ scene ~ '.js') }}"></script>
+{% endblock %}

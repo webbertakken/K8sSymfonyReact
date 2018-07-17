@@ -32,9 +32,12 @@ class MaintenanceListener
         }
 
         if ($this->container->has('twig')) {
-            $maintenance = $this->container->get('twig')->render('_system/maintenance.html.twig');
+            $maintenance = $this->container->get('twig')
+                ->render('_system/maintenance.html.twig', [
+                    'scene' => 'maintenance',
+                ]);
         } else {
-            $maintenance = '<html>Apache is functioning normally</html>';
+            $maintenance = '<html>Pages are being served normally</html>';
         }
 
         $event->setResponse(new Response($maintenance, 503));
