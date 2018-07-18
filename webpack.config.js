@@ -38,12 +38,16 @@ Encore
   // Create hashed file names (e.g. app.abc123.css)
   .enableVersioning(Encore.isProduction())
 
+  // jQuery is required for Materialize.js
+  .autoProvidejQuery()
+
   // Main scripts and styles definition
   .createSharedEntry('app', './assets/app.jsx')
 
   // Scene entries
   .addEntry('scenes/maintenance', './assets/scenes/Maintenance')
   .addEntry('scenes/demo/coreui', './assets/scenes/Demo/CoreUI')
+  .addEntry('scenes/demo/materialize', './assets/scenes/Demo/Materialize')
 
   // Use Sass/SCSS files (node-sass, sass-loader)
   .enableSassLoader()
