@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * Class DemoController.
@@ -20,12 +20,12 @@ class AppController extends AbstractController
     }
 
     /**
-     * @Route("/{scene}", name="scene")
+     * @Route("/{scene}", name="scene", requirements={"scene"="^(?!api).*"})
      */
     public function scene(string $scene): Response
     {
         return $this->render('scene.html.twig', [
-            'scene' => $scene
+            'scene' => $scene,
         ]);
     }
 

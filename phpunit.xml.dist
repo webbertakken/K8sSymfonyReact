@@ -22,6 +22,10 @@
     <!-- Configure your db driver and server_version in config/packages/doctrine.yaml -->
     <env name="DATABASE_URL" value="mysql://symfony:symfony@127.0.0.1:3306/symfony" />
     <!-- ###- doctrine/doctrine-bundle ### -->
+
+    <!-- ###+ nelmio/cors-bundle ### -->
+    <env name="CORS_ALLOW_ORIGIN" value="^https?://localhost(:[0-9]+)?$"/>
+    <!-- ###- nelmio/cors-bundle ### -->
   </php>
 
   <testsuites>
