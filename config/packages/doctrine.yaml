@@ -7,12 +7,10 @@ parameters:
 
 doctrine:
   dbal:
-    # configure these for your database server
+    default_connection: 'default'
     driver: 'pdo_mysql'
-    server_version: '5.7'
-    charset: utf8mb4
-
-    # With Symfony 3.3, remove the `resolve:` prefix
+    server_version: 'mariadb-10.2.16'
+    charset: 'utf8mb4'
     url: '%env(resolve:DATABASE_URL)%'
   orm:
     auto_generate_proxy_classes: '%kernel.debug%'
