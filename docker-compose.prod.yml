@@ -1,9 +1,9 @@
-version: '2'
+version: "2"
 services:
   mariadb-prod:
     build: .k8s/images/base/mariadb
     image: <your-container-registry>/mariadb
-  php-fpm-prod:
+  php-prod:
     build: .k8s/images/prod/php-fpm
     image: <your-container-registry>/php-fpm
   nginx-prod:

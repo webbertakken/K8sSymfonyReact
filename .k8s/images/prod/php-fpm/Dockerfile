@@ -1,4 +1,4 @@
-FROM base-php-fpm
+FROM base-php
 
 LABEL maintainer="Webber Takken <webber@takken.io>"
 

@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 services:
   mariadb:
     ports:
@@ -8,7 +8,7 @@ services:
       MYSQL_DATABASE: symfony
       MYSQL_USER: symfony
       MYSQL_PASSWORD: symfony
-  php-fpm:
+  php:
     ports:
       - "9000:9000"
     volumes:
@@ -20,14 +20,14 @@ services:
     ports:
       - "80:80"
     links:
-      - php-fpm
+      - php
     volumes_from:
-      - php-fpm
+      - php
     volumes:
       - ./logs/nginx/:/var/log/nginx:cached
   elk:
     ports:
       - "81:80"
     volumes_from:
-      - php-fpm
+      - php
       - nginx

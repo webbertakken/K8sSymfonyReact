@@ -3,22 +3,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: php-fpm
+  name: php
 spec:
   selector:
     matchLabels:
-      app: php-fpm
+      app: php
       tier: backend
   replicas: 2
   template:
     metadata:
       labels:
-        app: php-fpm
+        app: php
         tier: backend
     spec:
       containers:
       - name: php
-        image: <your-container-registry>/php-fpm
+        image: <your-container-registry>/php
         resources:
           requests:
             cpu: 50m
@@ -29,9 +29,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: php-fpm
+  name: php
   labels:
-    app: php-fpm
+    app: php
     tier: backend
 spec:
   ports:
@@ -42,5 +42,5 @@ spec:
     port: 9001
     targetPort: 9001
   selector:
-    app: php-fpm
+    app: php
     tier: backend

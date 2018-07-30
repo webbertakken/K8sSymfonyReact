@@ -15,29 +15,25 @@
 
 ## Prerequisites
 The following tools should be available from your command line:
-
 - [Node.js](https://nodejs.org)
 - [Yarn](https://yarnpkg.com)
 - [Composer](https://getcomposer.org)
 - [Docker](https://www.docker.com/get-docker) and [Compose](https://docs.docker.com/compose/)
 
-## Install
-Install composer and npm packages using:
-```bash
-yarn
-```
-
-## Develop
-##### Terminal 1:
+## Start
 Build and run your application, watching container logs:
 ```bash
-yarn up
+docker-compose up --build
 ```
 
-##### Terminal 2:
-Build your assets, open the browser with hot-reload, watching for any changes:
+Build your assets:
 ```bash
 yarn dev-server
+```
+
+## Console
+```bash
+docker-compose exec php bin/console
 ```
 
 ## Lint

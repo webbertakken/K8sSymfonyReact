@@ -53,8 +53,6 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "preinstall": "composer install",
-    "up": "docker-compose build && docker-compose up",
     "dev-server": "encore dev-server --hot",
     "lint": "yarn sass-lint && yarn eslint",
     "test": "yarn && yarn build-assets && vendor/bin/simple-phpunit",
