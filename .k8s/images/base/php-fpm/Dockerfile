@@ -36,7 +36,7 @@ COPY app.ini /etc/php7/php-fpm.d/
 COPY app.ini /etc/php7/cli/conf.d/
 COPY app.pool.conf /etc/php7/php-fpm.d/
 
-CMD ["php-fpm7", "-F"]
+CMD composer install && php-fpm7 -F
 
 WORKDIR /var/www/app
 
