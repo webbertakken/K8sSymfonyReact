@@ -14,6 +14,6 @@ WORKDIR /var/www/app
 
 RUN composer install --no-dev --optimize-autoloader
 
-CMD ["php-fpm7", "-F"]
+CMD ["php-fpm", "-F"]
 
 EXPOSE 9000

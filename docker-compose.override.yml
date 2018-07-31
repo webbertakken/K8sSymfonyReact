@@ -31,3 +31,7 @@ services:
     volumes_from:
       - php
       - nginx
+  redis-master:
+    image: k8s.gcr.io/redis:e2e
+    ports:
+      - "6379:6379"

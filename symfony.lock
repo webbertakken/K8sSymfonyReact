@@ -149,6 +149,9 @@
     "phpspec/prophecy": {
         "version": "1.7.5"
     },
+    "predis/predis": {
+        "version": "v1.1.1"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -192,6 +195,15 @@
             "branch": "master",
             "version": "4.0",
             "ref": "e65a105bf4cd5b1b79012ba029954927f05922e8"
+        }
+    },
+    "snc/redis-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "e9c58bfc414cfb7f06e8e5ae9f589868498f5d6a"
         }
     },
     "symfony/asset": {

@@ -29,3 +29,6 @@ services:
   App\Listener\MaintenanceListener:
     tags:
       - { name: kernel.event_listener, event: kernel.request }
+
+  # reference to Predis client
+  Predis\Client: '@snc_redis.default'

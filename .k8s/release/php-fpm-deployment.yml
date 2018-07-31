@@ -19,6 +19,11 @@ spec:
       containers:
       - name: php
         image: <your-container-registry>/php
+        env:
+          - name: REDIS_MASTER_URL
+            value: redis://redis-master?alias=master
+          - name: REDIS_SLAVE_URL
+            value: redis://redis-slave
         resources:
           requests:
             cpu: 50m
@@ -35,12 +40,9 @@ metadata:
     tier: backend
 spec:
   ports:
-  - name: php
+  - name: fast-cgi-listener
     port: 9000
     targetPort: 9000
-  - name: fast-cgi-listener
-    port: 9001
-    targetPort: 9001
   selector:
     app: php
     tier: backend

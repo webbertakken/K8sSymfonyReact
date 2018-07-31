@@ -14,8 +14,13 @@ class AppController extends AbstractController
     /**
      * @Route("/")
      */
-    public function homepage(): Response
+    public function homepage(\Predis\Client $client): Response
     {
+        $client->set('foo', 'bar');
+        $value = $client->get('foo');
+
+        dump($value);
+
         return $this->render('demo/index.html.twig');
     }
 

@@ -26,6 +26,11 @@
     <!-- ###+ nelmio/cors-bundle ### -->
     <env name="CORS_ALLOW_ORIGIN" value="^https?://localhost(:[0-9]+)?$"/>
     <!-- ###- nelmio/cors-bundle ### -->
+
+    <!-- ###+ snc/redis-bundle ### -->
+    <!-- passwords that contain special characters (@, %, :, +) must be urlencoded -->
+    <env name="REDIS_URL" value="redis://redis-master"/>
+    <!-- ###- snc/redis-bundle ### -->
   </php>
 
   <testsuites>
