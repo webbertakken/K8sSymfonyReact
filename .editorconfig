@@ -22,6 +22,6 @@ indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-# Php accepted standard (PSR-2, Symfony)
-[{**.{php,phtml},php_cs.dist,console,phpunit}]
+# Accepted standards (PSR-2, Symfony)
+[{**.{php,phtml,yml,yaml},php_cs.dist,console,phpunit}]
 indent_size = 4

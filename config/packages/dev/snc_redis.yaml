@@ -1,9 +1,9 @@
 snc_redis:
-  clients:
-    default:
-      type: predis
-      alias: default
-      dsn:
-        - "%env(REDIS_MASTER_URL)%"
-      options:
-        replication: true
+    clients:
+        default:
+            type: predis
+            alias: default
+            dsn:
+            - "%env(REDIS_MASTER_URL)%"
+            options:
+                replication: true
