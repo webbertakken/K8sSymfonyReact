@@ -75,11 +75,5 @@
   },
   "conflict": {
     "symfony/symfony": "*"
-  },
-  "extra": {
-    "symfony": {
-      "id": "01C74X1Y565K3CMJQCAYA0EN9X",
-      "allow-contrib": false
-    }
   }
 }
