@@ -27,7 +27,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.4.1",
     "react-chartjs-2": "^2.7.0",
-    "react-dom": "^16.4.1",
+    "react-dom": "^16.4.2",
     "react-ga": "^2.4.1",
     "react-materialize": "^2.3.3",
     "react-perfect-scrollbar": "^1.0.0",
